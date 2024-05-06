@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        color: maroon;
+    }
+</style>
+<body>
+    <center>
+
+        <!-- //question-1 -->
+        <h1>CART</h1>
+
+        <h2>Product : 🍫🥯</h2>
+        <h2>Enter price : <input type="text" id="in1"></h3>
+        <h3>Add quantity that you want : <input type="text" id="in2"></h2>
+
+        <h1 id="total"></h1> <br> <hr style="width: 50%; color: rgba(187, 147, 147, 0.336);">
+
+        <!-- //question-2 -->
+        <h1>BMI</h1>
+
+        <h3>Enter your weight : <input type="text" id="in3"></h3>
+        <h3>Enter your height : <input type="text" id="in4"></h3>
+
+        <h1 id="BMI"></h1> <br> <hr style="width: 50%; color: rgba(187, 147, 147, 0.336);">
+
+        <!-- //question-3 -->
+        <h1>TIME CACLULATION</h1>
+
+        <h3>Enter the distance travelled in meters : <input type="text" id="in5"></h3>
+        <h3>Enter the time taken in seconds : <input type="text" id="in6"></h3>
+
+        <h1 id="speed"></h1> <br><br><hr>
+    </center>
+</body>
+</html>
+
+<script>
+
+    //question-1
+    let a=document.getElementById("in1").value
+    let b=document.getElementById("in2").value
+
+
+    let total = +a * +b
+
+    document.getElementById("total").innerHTML="total is : " +total
+
+    //question-2
+    let weight = document.getElementById("in3").value
+    let height = document.getElementById("in4").value
+
+    let BMI = + weight/( +height * +height)
+
+    document.getElementById("BMI").innerHTML="BMI is : "+BMI.toFixed(2)
+
+    //question-3
+    let meters = document.getElementById("in5").value
+    let time = document.getElementById("in6").value
+
+    let speed = +meters / +time
+
+    document.getElementById("speed").innerHTML=speed+"m/s"
+
+</script>
