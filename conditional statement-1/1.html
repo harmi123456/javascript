@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        color: maroon;
+    } 
+    input{
+        border: 1px solid rgb(228, 228, 20);
+        background-color: rgba(176, 101, 10, 0.261);
+        height: 20px;
+        width: 10%;
+    }
+</style>
+<body>
+    <h1 style="margin-left: 50px;">TEMPRETURE</h1>
+    <h2>Enter tempreture of your city : </h1>
+    <input type="text" id="in" placeholder="tempreture">
+    <h2 id="ans"></h2> <br><br>
+
+    <h1 style="margin-left: 50px;">GRADING SYSTEM</h1>
+    <h2>Enter your score : </h1>
+    <input type="text" id="in1" placeholder="grad">
+    <h2 id="ans1"></h2> <br><br>
+
+    <h1 style="margin-left: 50px;">NUMBER COMPARISION</h1>
+    <h2>Enter first number : </h1>
+    <input type="text" id="num_1" placeholder="number">
+    <h2>Enter second number : </h1>
+    <input type="text" id="num_2" placeholder="number">
+
+    <h2 id="ans2"></h2> <br><br>
+
+    <h1 style="margin-left: 50px;">POSITIVE,NEGATIVE OR ZERO</h1>
+    <h2>Enter number : </h1>
+    <input type="text" id="number" placeholder="number">
+    <h2 id="ans3"></h2> <br><br>
+
+</body>
+</html>
+
+<script>
+
+    // ---tempreture---
+    let tempreture = document.getElementById("in").value
+
+    if(tempreture === ""){
+        document.getElementById("ans").innerHTML = "Enter valid tempreture"
+    } else{
+        if(tempreture >= 0 && tempreture <= 0){
+            document.getElementById("ans").innerHTML = "It's freezing cold!"
+        } else if(tempreture >= 0 && tempreture <= 10){
+            document.getElementById("ans").innerHTML = "It's chilly."
+        } else if(tempreture >= 11 && tempreture <= 20){
+            document.getElementById("ans").innerHTML = "It's cool."           
+        } else{
+            document.getElementById("ans").innerHTML = "It's warm!."
+        }
+    }
+
+
+
+    // ---grading system---
+    let score = document.getElementById("in1").value
+
+    if(score === ""){
+        document.getElementById("ans1").innerHTML = "Enter valid score"
+    } else{
+    if(score >= 90 && score <= 100){
+        document.getElementById("ans1").innerHTML = "Your grade is : A"
+    } else if(score >= 80 && score <= 89){
+        document.getElementById("ans1").innerHTML = "Your grade is : B"
+    } else if(score >= 70 && score<= 79){
+        document.getElementById("ans1").innerHTML = "Your grade is : C"           
+    } else if(score >= 60 && score<= 69){
+        document.getElementById("ans1").innerHTML = "Your grade is : D"
+    } else{
+        document.getElementById("ans1").innerHTML = "FAIL"
+    }
+}
+
+
+    // ---Number comparision---
+    let num_1 = document.getElementById("num_1").value
+    let num_2 = document.getElementById("num_2").value
+
+    if(num_1 === "" && num_2 === ""){
+        document.getElementById("ans2").innerHTML = "Enter number"
+    } else{
+        if(num_1 > num_2){
+            document.getElementById("ans2").innerHTML = "First number is greater.."
+        } else if(num_1 < num_2){
+            document.getElementById("ans2").innerHTML = "Second number is greater.."
+        } else{
+            document.getElementById("ans2").innerHTML = "Both numbers are equal.."
+        }
+    }
+
+
+    // ---positive,negative or zero---
+    let number = document.getElementById("number").value
+
+    if(number === ""){
+        document.getElementById("ans3").innerHTML = "Enter number"
+    } else{
+        if(number > 0 ){
+            document.getElementById("ans3").innerHTML = "Number is positive..."
+        } else if(number < 0){
+            document.getElementById("ans3").innerHTML = "Number is negative.."
+        } else{
+            document.getElementById("ans3").innerHTML = "Number is zero..."
+        }
+    }
+
+</script>
