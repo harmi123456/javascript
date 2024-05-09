@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="margin-left: 50px;">TAX CALCULATOR</h1>
+    <h2>Enter your Networth : </h1>
+    <input type="text" id="in1" placeholder="grad">
+    <h2 id="ans1"></h2> <br><br>
+</body>
+</html>
+<script>
+    let tax = document.getElementById("in1").value
+
+    if(tax === ""){
+        document.getElementById("ans1").innerHTML = "Enter your Networth"
+    } else{
+        if(tax >= 0 && tax <= 10000 ){
+            document.getElementById("ans1").innerHTML = "Your tax is : 5%"
+        } else if(tax >= 10001 && tax <= 20000){
+            document.getElementById("ans1").innerHTML = "Your tax is : 10% "
+        } else if(tax >= 20001 && tax <= 30000){
+            document.getElementById("ans1").innerHTML = "Your tax is : 15%"
+        } else if(tax >= 30001 && tax <= 40000){
+            document.getElementById("ans1").innerHTML = "Your tax is : 20%"
+        } else{
+            document.getElementById("ans1").innerHTML = "Your tax is : 25%"
+        }
+    }
+</script>

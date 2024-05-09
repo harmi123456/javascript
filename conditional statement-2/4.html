@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="margin-left: 50px;">POSITIVE,NEGATIVE OR ZERO</h1>
+    <h2>Enter number : </h1>
+    <input type="text" id="number" placeholder="number">
+    <h2 id="ans3"></h2> <br><br>
+</body>
+</html>
+<script>
+     let number = document.getElementById("number").value
+
+if(number === ""){
+    document.getElementById("ans3").innerHTML = "Enter number"
+} else{
+    if(number > 0 ){
+        document.getElementById("ans3").innerHTML = "Number is positive..."
+    } else if(number < 0){
+        document.getElementById("ans3").innerHTML = "Number is negative.."
+    } else{
+        document.getElementById("ans3").innerHTML = "Number is zero..."
+    }
+}
+</script>

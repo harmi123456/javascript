@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Find Largest number</h1>
+
+    <h2>Enter first number : <input type="text" id="in1"></h2>
+    <h2>Enter second number : <input type="text" id="in2"></h2>
+    <h2>Enter third number : <input type="text" id="in3"></h2>
+    <h2>Enter forth number : <input type="text" id="in4"></h2>
+
+    <h3 id="ans2"></h3>
+</body>
+</html>
+
+<script>
+    
+    let min1 = document.getElementById("in1").value
+    let min2 = document.getElementById("in2").value
+    let min3 = document.getElementById("in3").value
+    let min4 = document.getElementById("in4").value
+
+    if(min1 === "" && min2 === "" && min3 === "" && min4 === "")
+    {
+        document.getElementById("ans2").innerHTML = "Invalid Number's"
+    }
+    else
+    {
+        if(min1>min2 && min1>min3 && min1>min4)
+        {
+            document.getElementById("ans2").innerHTML = "'"+min1+"' First Number is Largest..."
+        }
+        else if(min2>min1 && min2>min3 && min2>min4)
+        {
+            document.getElementById("ans2").innerHTML = "'"+min2+"' Second Number is Largest..."
+        }
+        else if(min3>min1 && min3>min2 && min3>min4)
+        {
+            document.getElementById("ans2").innerHTML = "'"+min3+"' Third Number is Largest..."
+        }
+        else
+        {
+            document.getElementById("ans2").innerHTML = "'"+min4+"' Fourth Number is Largest..."
+        }
+    }
+</script>

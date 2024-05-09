@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SWAPPING</h1>
+
+    <h2>Enter first value : <input type="text" id="in1"></h2>
+    <h2>Enter Second value : <input type="text" id="in2"></h2>
+    <h2>Enter Third value : <input type="text" id="in3"></h2>
+
+    <h3 id="ans1"></h3>
+    <h3 id="ans2"></h3>
+    <h3 id="ans3"></h3>
+
+</body>
+</html>
+
+<script>
+    let first = document.getElementById("in1").value
+    let second = document.getElementById("in2").value
+    let third = document.getElementById("in3").value
+
+    document.getElementById("ans1").innerHTML = "swap value is : " + second
+    document.getElementById("ans2").innerHTML = "swap value is : " + third
+    document.getElementById("ans3").innerHTML = "swap value is : " + first
+
+</script>
