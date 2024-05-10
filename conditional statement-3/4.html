@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AGE</h1>
+
+    <h2>Enter your current age</h2>
+    <input type="text" id="in">
+
+    <h3 id="age"></h3>
+</body>
+</html>
+
+<script>
+    let age = document.getElementById("in").value
+
+    if(age === ""){
+        document.getElementById("age").innerHTML = "Enter valid age"
+    } else{
+        if(age >= 0 && age <= 10){
+            document.getElementById("age").innerHTML = "child"
+        } else if(age >= 11 && age <= 20){
+            document.getElementById("age").innerHTML = "Teen"
+        } else{
+            document.getElementById("age").innerHTML = "Adult"
+        }
+    }
+</script>
