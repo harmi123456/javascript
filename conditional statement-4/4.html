@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PASSWORD</h1>
+
+    <h2>Enter Email</h2>
+    <input type="text" id="in1">
+    <h2>Enter password</h2>
+    <input type="text" id="in2">
+
+    <h4 id="mail"></h4>
+</body>
+</html>
+
+<script>
+    let storedemail = "harmipagada4@gmail.com"
+    let enteremail = document.getElementById("in1").value
+
+    let storedpass = "456@harmii__"
+    let enterpass = document.getElementById("in2").value
+    
+    if(enteremail === "" && enterpass === ""){
+        document.getElementById("mail").innerHTML = "Password reqired"
+    } else{
+        if(storedemail === enteremail && storedpass === enterpass){
+            document.getElementById("mail").innerHTML = "You'r Logged in"
+        } else{
+        if(enteremail != storedemail){
+            document.getElementById("mail").innerHTML = "Incorrect mail id "
+        } else {
+            document.getElementById("mail").innerHTML = "Incorrect password "
+        }
+    }
+    }
+
+</script>

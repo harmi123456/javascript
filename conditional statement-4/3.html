@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SIMPLE INTEREST</h1> <br>
+
+    <h2>Enter Principle amount : </h2>
+    <input type="text" id="in1">
+
+    <h2>Enter rate of insterest  : </h2>
+    <input type="text" id="in2">
+
+    <h2>Enter Time duration : </h2>
+    <input type="text" id="in3">
+
+    <h2 id="interest"></h1>
+</body>
+</html>
+
+<script>
+    let amount = document.getElementById("in1").value
+    let rate = document.getElementById("in2").value
+    let duration = document.getElementById("in3").value
+
+    let interest = (+amount * +rate * +duration)/100
+
+    document.getElementById("interest").innerHTML = interest
+</script>

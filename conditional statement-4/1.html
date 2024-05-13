@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 style="margin-left: 50px;">GRADING SYSTEM</h1>
+    <h2>Enter your score : </h1>
+    <input type="text" id="in1" placeholder="grad">
+    <h2 id="ans1"></h2> <br><br>
+    
+</body>
+</html>
+
+<script>
+     let score = document.getElementById("in1").value
+
+    if(score === ""){
+        document.getElementById("ans1").innerHTML = "Enter valid score"
+    } else{
+        if(score >= 90 && score <= 100){
+            document.getElementById("ans1").innerHTML = "Your grade is : A"
+        } else if(score >= 80 && score <= 89){
+            document.getElementById("ans1").innerHTML = "Your grade is : B"
+        } else if(score >= 70 && score<= 79){
+            document.getElementById("ans1").innerHTML = "Your grade is : C"           
+        } else if(score >= 60 && score<= 69){
+            document.getElementById("ans1").innerHTML = "Your grade is : D"
+        } else{
+            document.getElementById("ans1").innerHTML = "FAIL"
+        }
+    }
+
+
+</script>
