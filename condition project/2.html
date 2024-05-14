@@ -5,17 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-color: black;
+    }
+    h1{
+        color: rgb(232, 137, 49);
+    }
+    h2{
+        color: rgb(197, 68, 236);
+    }
+    h3{
+        color: rgb(238, 120, 157);
+    }
+    input{
+        height: 30px;
+        border: none;
+        border-radius: 20px;
+        background-color: aliceblue;
+    }
+</style>
 <body>
-    <h1>Product discount</h1>
+    <center>
+        <br><br><br>
+        <h1>Product discount</h1>
 
-    <h2>Enter your Product name</h2>
-    <input type="text" id="product">
+        <h2>Enter your Product name</h2>
+        <input type="text" id="product">
 
-    <h2>Enter product price</h2>
-    <input type="text" id="price">
+        <h2>Enter product price</h2>
+        <input type="text" id="price">
 
-    <h3 id="discount"></h3>
-    <h3 id="final_price"></h3>
+        <h3 id="discount"></h3>
+        <h3 id="final_price"></h3>
+    </center>
 </body>
 </html>
 
@@ -27,13 +50,13 @@
         document.getElementById("discount").innerHTML = "Enter your product name and their price"
     } else{
         if(price >= 100){
-            document.getElementById("discount").innerHTML = "Congrats...! You got 20% discount on the product"
+            document.getElementById("discount").innerHTML = "Congrats...🥳! You got 20% discount on the product"
             document.getElementById("final_price").innerHTML = "Your price is " + (price - 20)
         } else if(price >= 50){
-            document.getElementById("discount").innerHTML = "Congrats...! You got 10% discount on the product"
+            document.getElementById("discount").innerHTML = "Congrats...🥳! You got 10% discount on the product"
             document.getElementById("final_price").innerHTML = "Your price is " + (price - ((price * 10)/100))
         } else{
-            document.getElementById("discount").innerHTML = "Upps...! Sorry You don't get any discount from us.."
+            document.getElementById("discount").innerHTML = "Oopps...😥! Sorry You don't get any discount from us...."
             document.getElementById("final_price").innerHTML = "Your price is " + price
         }
     }

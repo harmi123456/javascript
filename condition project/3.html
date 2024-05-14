@@ -5,13 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-color: black;   
+    }
+    h1{
+        color: rgb(135, 212, 204);
+    }
+    h2{
+        color: aliceblue;
+    } h3{
+        color: aliceblue;
+    }
+    input{
+            height: 30px;
+            border: none;
+            border-radius: 20px;
+            background-color: aliceblue;
+        }
+</style>
 <body>
-    <h1>Guess number</h1>
+    <center>
+        <br><br><br><br><br>
+        <h1>Guess number</h1>
 
-    <h2>Enter any number</h2>
-    <input type="text" id="number">
+        <h2>Enter any number</h2>
+        <input type="text" id="number">
 
-    <h3 id="secret"></h3>
+        <h3 id="secret"></h3>
+    </center>
 </body>
 </html>
 
@@ -29,7 +51,7 @@
         } else if(number > 5){
             document.getElementById("secret").innerHTML = "Oopps..you are so far to the number"
         } else{
-            document.getElementById("secret").innerHTML = "Congrats Dear...! You got it... <br> You won the price"
+            document.getElementById("secret").innerHTML = "Congrats Dear....🥳🥳! You got it... <br> You won the price"
         }
     }
 </script>
