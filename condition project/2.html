@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Product discount</h1>
+
+    <h2>Enter your Product name</h2>
+    <input type="text" id="product">
+
+    <h2>Enter product price</h2>
+    <input type="text" id="price">
+
+    <h3 id="discount"></h3>
+    <h3 id="final_price"></h3>
+</body>
+</html>
+
+<script>
+    product = document.getElementById("product").value
+    price = document.getElementById("price").value
+
+    if(product === "" && price === ""){
+        document.getElementById("discount").innerHTML = "Enter your product name and their price"
+    } else{
+        if(price >= 100){
+            document.getElementById("discount").innerHTML = "Congrats...! You got 20% discount on the product"
+            document.getElementById("final_price").innerHTML = "Your price is " + (price - 20)
+        } else if(price >= 50){
+            document.getElementById("discount").innerHTML = "Congrats...! You got 10% discount on the product"
+            document.getElementById("final_price").innerHTML = "Your price is " + (price - ((price * 10)/100))
+        } else{
+            document.getElementById("discount").innerHTML = "Upps...! Sorry You don't get any discount from us.."
+            document.getElementById("final_price").innerHTML = "Your price is " + price
+        }
+    }
+
+</script>

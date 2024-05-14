@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>Ticket based on age</h1>
+
+    <h2>Enter your name </h2>
+    <input type="text" id="in1">
+
+    <h2>Enter your age</h2>
+    <input type="text" id="in2">
+
+    <h2>Enter place that you want to visit today</h2>
+    <input type="text" id="in3">
+
+    <h3 id="ticket"></h3>
+    <h3 id="tik"></h3>
+</body>
+</html>
+
+<script>
+    let name = document.getElementById("in1").value
+    let age = document.getElementById("in2").value
+    let place = document.getElementById("in3").value
+
+    if(name === "" && age === "" && place === ""){
+        document.getElementById("ticket").innerHTML = "Enter your name age and place to reserve sit..."
+        document.getElementById("tik").innerHTML = "Your ticket price"
+    } else{
+        if(age >= 0 && age <= 12){
+            document.getElementById("ticket").innerHTML = "Awesome..! Your sit has been reserved for your safe journey.."
+            document.getElementById("tik").innerHTML = "Your ticket price just rs.5"
+        } else if(age >= 13 && age <= 18){
+            document.getElementById("ticket").innerHTML = "Awesome..! Your sit has been reserved for your safe journey.."
+            document.getElementById("tik").innerHTML = "Your ticket price just rs.10"
+        } else if(age >= 19 && age <= 60){
+            document.getElementById("ticket").innerHTML = "Awesome..! Your sit has been reserved for your safe journey.."
+            document.getElementById("tik").innerHTML = "Your ticket price just rs.20"
+        } else{
+            document.getElementById("ticket").innerHTML = "Awesome..! Your sit has been reserved for your safe journey.."
+            document.getElementById("tik").innerHTML = "Your ticket price just rs.15"
+        }
+    }
+</script>
