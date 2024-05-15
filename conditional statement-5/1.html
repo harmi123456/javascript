@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day of week</title>
+
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    h1{
+        color: lightskyblue;
+    }
+    h2{
+        color: lightgreen;
+    }
+    h3{
+        color: lightgrey;
+    }
+    input{
+        height: 30px;
+        border-radius: 50px;
+        border: none;
+    }
+</style>
+<body>
+    <center>
+        <br><br><br>
+        <h1>Know the day of week</h1>
+        
+        <h2>Enter day</h2>
+        <input type="text" id="day">
+
+        <h3 id="ans"></h3>
+    </center>
+</body>
+</html>
+<script>
+
+    let day = document.getElementById("day").value
+    // let sunday = "its holiday"
+    if(day === ""){
+        document.getElementById("ans").innerHTML = "Enter name of day"
+    } else{
+        switch(day){
+            case "sunday" : 
+            case "Sunday" : 
+            case "SUNDAY" : 
+                document.getElementById("ans").innerHTML = "its holiday"
+                break
+
+            case "monday" : 
+            case "Monday" :
+            case "MONDAY" :
+                document.getElementById("ans").innerHTML = "It's the start of the workweek"
+                break
+
+            case "tuesday" : 
+            case "Tuesday" : 
+            case "TUESDAY" : 
+                document.getElementById("ans").innerHTML = "It's some other day."
+                break
+
+            case "wednesday" : 
+            case "Wednesday" : 
+            case "WEDNESDAY" : 
+                document.getElementById("ans").innerHTML = "It's some other day."
+                break
+
+            case "thuresday" : 
+            case "Thuresday" : 
+            case "THURESDAY" : 
+                document.getElementById("ans").innerHTML = "It's some other day."
+                break
+
+            case "friday" : 
+            case "Friday" :
+            case "FRIDAY" :
+                document.getElementById("ans").innerHTML = "It's almost the weekend!"
+                break
+
+            case "saturday" : 
+            case "Saturday" : 
+            case "SATURDAY" : 
+                document.getElementById("ans").innerHTML = "It's half holiday..!"
+                break
+
+            default : 
+                document.getElementById("ans").innerHTML = "don't match with any day..."
+        }
+    }
+
+</script>

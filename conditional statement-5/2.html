@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculator</title>
+
+</head>
+<style>
+    body{
+        background-color: rgba(0, 0, 0, 0.545);
+    }
+    h1{
+        color: purple;
+    }
+    h2{
+        color: rgb(10, 33, 72);
+    }
+    h3{
+        color: rgb(1, 111, 1);
+    }
+    input{
+        height: 30px;
+        border-radius: 50px;
+        border: none;
+    }
+</style>
+<body>
+    <center>
+        <br><br><br>
+        <h1>Calculator</h1>
+
+        <h2>Enter mathamatic operator</h2>
+        <input type="text" id="operator">
+
+        <h2>Enter first value</h2>
+        <input type="text" id="first">
+
+        <h2>Enter Second value</h2>
+        <input type="text" id="second">
+
+        <h3 id="final_ans"></h3>
+    </center>
+</body>
+</html>
+
+<script>
+
+    let operator = document.getElementById("operator").value
+    let first = document.getElementById("first").value
+    let second = document.getElementById("second").value
+
+    switch(operator){
+        case "plus" : 
+        case "+" : 
+            document.getElementById("final_ans").innerHTML = "Addition of the value is : "+first+ +second
+            break
+        case "minus" : 
+        case "-" : 
+            document.getElementById("final_ans").innerHTML = "Subtraction of the value is : " +first - +second
+            break
+        case "multiplication" : 
+        case "*" : 
+            document.getElementById("final_ans").innerHTML ="Multiplication of the value is : " +first * +second
+            break
+        case "division" : 
+        case "/" : 
+            document.getElementById("final_ans").innerHTML ="Division of the value is : " +first / +second
+            break
+        default : 
+            document.getElementById("final_ans").innerHTML = "Invalid Operator"
+    }
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coffee</title>
+
+</head>
+<style>
+    body{
+        background-color: rgba(0, 0, 0, 0.973);
+    }
+    h1{
+        color: cadetblue;
+    }
+    h2{
+        color: lightsalmon;
+    }
+    h3{
+        color: rgb(216, 246, 189);
+    }
+    input{
+        height: 30px;
+        border-radius: 50px;
+        border: none;
+    }
+</style>
+<body>
+    <center>
+        <h1>Starbucks Menu</h1>
+
+        <h2> 1 for Caramel Apple Spice</h2>
+        <h2> 2 for Java Chip Frappuccino</h2>
+        <h2> 3 for Caffe Americano</h2>
+        <h2> 4 for Cold coffee</h2>
+        <h2> 5 for Cappuccino</h2>
+        <h2> 6 for Double Chocolate Chip Cookie</h2>
+        <h2> 7 for Double Chocolate Chip Frappuccino</h2>
+        <br>
+        <h3>To Place Your order plzz type the number </h3>
+        <input type="text" id="coffee">
+
+        <h3 id="price"></h3>
+    </center>
+</body>
+</html>
+
+<script>
+    let coffee = document.getElementById("coffee").value
+
+    if(coffee === ""){
+        document.getElementById("price").innerHTML ="enter number"
+    } else{
+        switch(+coffee){
+            case 1 :
+                document.getElementById("price").innerHTML = "Your coffee name is Caramel Apple Spice. <br> It's Price is $120 <br> Awesome...! Your order has been considered by us. <br> Wait a minut WE Will serve Your Meal At your doorstep... <br> THANK YOU..!"
+                break
+            case 2 :
+                document.getElementById("price").innerHTML = "Your coffee name is Java Chip Frappuccino. <br> It's Price is $140 <br> Awesome...! Your order has been considered by us. <br> Wait a minut WE Will serve Your Meal At your doorstep... <br> THANK YOU..!"
+                break
+            case 3 :
+                document.getElementById("price").innerHTML = "Your coffee name is Caffe Americano. <br> It's Price is $100 <br> Awesome...! Your order has been considered by us. <br> Wait a minut WE Will serve Your Meal At your doorstep... <br> THANK YOU..!"
+                break
+            case 4 :
+                document.getElementById("price").innerHTML = "Your coffee name is Cold coffee. <br> It's Price is $120 <br> Awesome...! Your order has been considered by us. <br> Wait a minut WE Will serve Your Meal At your doorstep... <br> THANK YOU..!"
+                break
+            case 5 :
+                document.getElementById("price").innerHTML = "Your coffee name is Cappuccino . <br> It's Price is $150 <br> Awesome...! Your order has been considered by us. <br> Wait a minut WE Will serve Your Meal At your doorstep... <br> THANK YOU..!"
+                break
+            case 6 :
+                document.getElementById("price").innerHTML = "Your coffee name is Double Chocolate Chip Cookie. <br> It's Price is $170 <br> Awesome...! Your order has been considered by us. <br> Wait a minut WE Will serve Your Meal At your doorstep... <br> THANK YOU..!"
+                break
+            case 7 :
+                document.getElementById("price").innerHTML = "Your coffee name is Double Chocolate Chip Frappuccino. <br> It's Price is $70 <br> Awesome...! Your order has been considered by us. <br> Wait a minut WE Will serve Your Meal At your doorstep... <br> THANK YOU..!"
+                break
+            default : 
+                document.getElementById("price").innerHTML = "Oopss...! Something went wrong  <br> Plzz check your number.."
+        }
+    }
+</script>

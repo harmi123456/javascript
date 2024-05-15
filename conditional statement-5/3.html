@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Traffic Light</title>
+
+</head>
+<style>
+    body{
+        background-color: rgba(255, 192, 203, 0.813);
+    }
+    h1{
+        color: maroon;
+    }
+    h3{
+        color: rgb(0, 99, 102);
+    }
+    h4{
+        color: rgb(196, 7, 99);
+    }
+    input{
+        height: 30px;
+        border-radius: 50px;
+        border: none;
+    }
+</style>
+<body>
+    <center>
+        <br><br><br>
+        <h1>Learn Traffic Rules</h1>
+
+        <h4>Here's some color that are very usefull to Reduce Traffic <br> Like Red Green And Yellow.... </h2>
+        <h3>To Know the Traffic rules Plzz Enter below <u>Red , Green or Yellow</u></h2>
+
+        <input type="text" id="color">
+            
+        <h3 id="ans"></h3>
+        
+    </center>
+</body>
+</html>
+
+<script>
+    let color = document.getElementById("color").value
+
+    switch(color){       
+        case "red" : 
+            document.getElementById("ans").innerHTML = "Plzz Stop Your vehicle..."
+            break
+        case "yellow" : 
+            document.getElementById("ans").innerHTML = "Plzz Slow Down Your Vehicle..."
+            break
+        case "green" : 
+            document.getElementById("ans").innerHTML = "Go!..."
+            break
+        default : 
+            document.getElementById("ans").innerHTML = "Invalid Lightcolor"
+
+    }
+</script>

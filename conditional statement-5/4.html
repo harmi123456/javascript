@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Translator</title>
+
+</head>
+<style>
+    body{
+        background-color: rgba(0, 0, 0, 0.396);
+    }
+    h1{
+        color: rgb(110, 1, 244);
+    }
+    h2{
+        color: rgb(1, 1, 99);
+    }
+    input{
+        height: 30px;
+        border-radius: 50px;
+        border: none;
+    }
+</style>
+<body>
+    <center>
+        <br><br><br>
+        <h1>TRANSLATOR</h1>
+
+        <h2>Here's I'm for translate the hello word in your language... <br> Plzz Enter your Fav laungauge to show the result..</h2>
+        <input type="text" id="language">
+
+        <h3 id="translate"></h3>
+    </center>
+</body>
+</html>
+
+<script>
+    let language = document.getElementById("language").value
+
+    switch(language){
+        case "english" :
+        case "English" :
+        case "ENGLISH" :
+            document.getElementById("translate").innerHTML = "In English We Say : Hello!"
+            break
+        case "spanish" :
+        case "Spanish" :
+        case "SPANISH" :
+            document.getElementById("translate").innerHTML = "In Spanish We Say : ¡Hola!'"
+            break
+        case "french" :
+        case "French" :
+        case "FRENCH" :
+            document.getElementById("translate").innerHTML = "In English We Say : Bonjour!"
+            break
+        default : 
+            document.getElementById("translate").innerHTML = "Language not supported"
+    }
+</script>
