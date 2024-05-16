@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODD</title>
+</head>
+<body>
+    <center>
+        <br><br>
+        <h1>Find Odd number</h1>
+        <br>   
+        <h2>Enter any number</h2> 
+        <input type="text" id="number">   
+        
+        <h4 id="od"></h2>
+        <h2 id="odd"></h2>
+    </center>
+</body>
+</html>
+
+<script>
+    let number = document.getElementById("number").value
+
+for(let i=0; i<=number; i++){
+    if(i % 2 !== 0){
+        document.getElementById("od").innerHTML = "Odd numbers are given below"
+        document.getElementById("odd").innerHTML += i +"<br>"
+    } 
+}    
+</script>

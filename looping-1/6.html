@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORD</title>
+</head>
+<body>
+    <center>
+        <br><br>
+        <h2>Enter any word</h2>
+        <input type="text" id="hello">
+        <h2>Enter the limit for how many times want to print the word</h2>
+        <input type="text" id="time">
+
+        <h2 id="word"></h2>
+    </center>
+</body>
+</html>
+
+<script>
+    let word = document.getElementById("hello").value
+    let time = document.getElementById("time").value
+    for(let i = 1; i <= time; i++){
+        document.getElementById("word").innerHTML += word +"<br>"
+    }
+</script>

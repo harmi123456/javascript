@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVEN</title>
+</head>
+<body>
+    <center>
+        <br><br>
+        <h1>Find Even number</h1>
+        <br>   
+        <h2>Enter any number</h2> 
+        <input type="text" id="number">   
+        
+        <h4 id="eve"></h2>
+        <h2 id="even"></h2>
+    </center>
+</body>
+</html>
+
+<script>
+    let number = document.getElementById("number").value
+
+for(let i=0; i<=number; i++){
+    if(i % 2 === 0){
+        document.getElementById("eve").innerHTML = "Even numbers are given below"
+        document.getElementById("even").innerHTML += i +"<br>"
+    } 
+}    
+</script>

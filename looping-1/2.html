@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowels</title>
+</head>
+<body>
+    <center>
+        <br><br>
+        <h1>FIND VOWELS</h1> <br>
+        <h2>Enter Your name</h2>
+        <input type="text" id="name">
+
+        <h2 id="vowels"></h2>
+    </center>
+</body>
+</html>
+
+<script>
+    let name = document.getElementById("name").value
+
+    let vowels = "0"
+
+    if(name === ""){
+        document.getElementById("vowels").innerHTML = "Invalid string"
+    }
+    for(let i=1; i<=name.length-1; i++){
+        if( name[i] === 'a' || name[i] === 'A' || 
+            name[i] === 'e' ||name[i] === 'E' ||
+            name[i] === 'i' ||name[i] === 'I' ||
+            name[i] === 'o' ||name[i] === 'O' ||
+            name[i] === 'u' ||name[i] === 'U')
+            {
+            vowels ++
+        } 
+    }
+
+    document.getElementById("vowels").innerHTML += "Total vowels in the string : " +vowels
+</script>

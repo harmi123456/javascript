@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <center>
+        <br><br>
+        <h1>PALINDROME</h1> <br>
+        <h2>Enter any name</h1>
+        <input type="text" id="name">
+        <h2 id="palindrome"></h2>
+    </center>
+</body>
+</html>
+
+<script>
+
+    let name = document.getElementById("name").value
+
+    let res1 = ""
+    let res2 = ""
+
+    for(let i = 0; i <= name.length-1; i++){
+        res1 += name[i]
+    }
+
+    for(let i= name.length-1; i>=0; i--){
+        res2 += name[i]
+    }
+
+    if(name === ""){
+        document.getElementById("palindrome").innerHTML = "Enter valid string"
+    } else{
+        if(res1 === res2){
+            document.getElementById("palindrome").innerHTML = "It's Palindrome.."
+        } else{
+            document.getElementById("palindrome").innerHTML = "It's not Palindrome...!"
+        }
+    }
+</script>
