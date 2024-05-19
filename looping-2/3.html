@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVERSE</title>
+</head>
+<body>
+    <h1>REVERSE THE NUMBER</h1>
+    <h2>Enter number</h2>
+    <input type="number" id="number">
+
+    <h3 id="reverse"></h3>
+</body>
+</html>
+
+<script>
+    let number = document.getElementById("number").value
+
+    let rev=0,rem
+
+    if(number === ""){
+        document.getElementById("reverse").innerHTML = "Invalid number"
+    } else{
+        while(number != 0){
+        rem = number % 10
+        rev = rev*10 + rem
+        number = math.floor(number / 10)
+    } 
+    document.getElementById("reverse").innerHTML = rev
+    }
+</script>
