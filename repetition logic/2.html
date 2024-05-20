@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of digits</title>
+</head>
+<style>
+    body{
+        background-color: rgba(89, 141, 158, 0.479);
+    }
+    h1{
+        color: brown;
+    }
+    h2{
+        color: rgb(1, 104, 56);
+    }
+    h3{
+        color: rgb(48, 1, 93);
+    }
+</style>
+<body>
+    
+    <center>
+        <br><br><br><br>
+        <h1> Sum Of Digit</h1>
+    
+        <h3>
+            Enter Any Number : 
+            <input type="number" id="int3">
+        </h3>
+        <h2 id="ans"></h2>
+    </center>  
+    
+</body>
+</html>
+<script>
+    let num = document.getElementById("int3").value
+    let digit = 0
+
+    if(num === "")
+    {
+        document.getElementById("ans").innerHTML = "Invalid Number"
+    }
+    else
+    {
+        for(let i=0; num[i]; i++)
+        {
+            digit += num[i] - '0'
+        }
+        document.getElementById("ans").innerHTML = "Sum Of All Digit is : "+digit
+    }
+    
+</script>
