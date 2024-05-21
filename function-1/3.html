@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACTORIAL</title>
+</head>
+<body>
+   
+        <h1> Factorial Of Number </h1>
+    
+    <h3>
+        Enter Any Number : 
+        <input type="text" id="int5">
+    </h3>
+    <h2 id="ans3"></h2>
+    <br><br>
+
+</body>
+</html>
+
+<script>
+    let fact_num = document.getElementById("int5").value
+let fact = 1
+factorial=()=>
+{
+    if(fact_num === "")
+    {
+        document.getElementById("ans3").innerHTML = "Invalid Number"
+    }
+    else
+    {
+        for(let i=1; i<=fact_num; i++)
+        {
+            fact *= i
+        }
+        document.getElementById("ans3").innerHTML = "Factorial Of &nbsp;"+fact_num+" is : "+fact
+    }
+}
+factorial()
+
+</script>

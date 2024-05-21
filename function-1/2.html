@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNCTIONS</title>
+</head>
+<body>
+    <h1>SUM</h1>
+
+    <h2>Enter first number</h2>
+    <input type="number" id="first">
+
+    <h2>Enter second number</h2>
+    <input type="number" id="second">
+
+    <h2>Enter third number</h2>
+    <input type="number" id="third">
+
+    <h1 id="total"></h1>
+
+</body>
+</html>
+
+<script>
+    let first = document.getElementById("first").value
+    let second = document.getElementById("second").value
+    let third = document.getElementById("third").value
+
+    function sum(){
+       let total = +first + +second + +third
+        document.getElementById("total").innerHTML = total
+    }
+    sum()
+</script>

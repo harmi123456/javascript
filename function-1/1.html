@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCT</title>
+</head>
+<body>
+
+    <h1> Product Of Digits </h1>
+    
+    <h3>
+        Enter Any Number : 
+        <input type="text" id="int1">
+    </h3>
+    <h2 id="ans1"></h2>
+    <br><br>
+
+</body>
+</html>
+
+<script>
+
+let product_num = document.getElementById("int1").value
+let digit = 1
+let product = function()
+{
+    if(product_num === "")
+    {
+        document.getElementById("ans1").innerHTML = "Invalid Number"
+    }
+    else
+    {
+        for(let i=0; product_num[i]; i++)
+        {
+            digit *= product_num[i]
+        }
+        document.getElementById("ans1").innerHTML = "Product Of Digit is : "+digit
+    }
+}
+product()
+
+</script>
