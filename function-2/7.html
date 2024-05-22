@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CELSIUS</title>
+</head>
+<body>
+
+        <h1> Celsius To Fahrenheit </h1>
+   
+    <h3>
+        Enter Temprature [in Celsius(%c)] : 
+        <input type="text" id="celsius">
+    </h3>
+    <h2 id="ans"></h2>
+</body>
+</html>
+
+<script>
+
+let celsius = document.getElementById("celsius").value
+
+if(celsius === "")
+{
+    document.getElementById("ans").innerHTML = "Invalid Celsius"
+}
+else
+{
+    fahrenheit=(celsius)=>
+    {
+        return (celsius * 9/5) + 32
+    } 
+    document.getElementById("ans").innerHTML = "Celsius To Fahrenheit is : "+fahrenheit(celsius)+" Degrees..."
+}
+</script>

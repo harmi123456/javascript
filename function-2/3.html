@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONCAT</title>
+</head>
+<body>
+
+    <h1>CONCAT THE STRINGS</h1>
+
+    <h3>Enter first string</h3>
+    <input type="text" id="in1">
+
+    <h3>Enter second string</h3>
+    <input type="text" id="in2">
+
+    <h2 id="concat"></h2>
+
+</body>
+</html>
+
+<script>
+    let first = document.getElementById("in1").value
+    let second = document.getElementById("in2").value
+
+    function greet(first,second){ //parameter
+        concat = first +second
+        return concat
+    }
+    // console.log(greet("komal"))
+
+    document.getElementById("concat").innerHTML = "concat strig is : "+ greet(first,second)
+</script>

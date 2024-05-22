@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUM</title>
+</head>
+<body>
+    <h1>SUM OF TWO VALUES</h1>
+    <br>
+
+    <h3>Enter first value</h3>
+    <input type="number" id="in1">
+
+    <h3>Enter second value</h3>
+    <input type="number" id="in2">
+
+    <h2 id="sum"></h2>
+</body>
+</html>
+
+<script>
+    let first = document.getElementById("in1").value
+    let second = document.getElementById("in2").value
+
+    sum =(first,second)=>{
+        sum = +first + +second
+        return sum
+    }
+    
+    document.getElementById("sum").innerHTML = sum(first,second)
+</script>

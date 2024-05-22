@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AREA OF SQURE</title>
+</head>
+<body>
+    <h1>AREA OF A SQURE</h1>
+
+    <h3>Enter the side of squre</h3>
+    <input type="number" id="number">
+
+    <h2 id="ans"></h2>
+</body>
+</html>
+
+<script>
+    let side = document.getElementById("number").value
+
+    function squre(side){ //parameter
+        area = side*side
+        return area 
+    }
+
+    document.getElementById("ans").innerHTML = "Area of squre is : " +squre(side)
+
+</script>

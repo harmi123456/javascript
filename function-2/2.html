@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECTANGLE</title>
+</head>
+<body>
+    <h1>AREA OF RECTANGLE</h1>
+
+    <h2>Enter height of squre</h2>
+    <input type="number" id="in1">
+
+    <h2>Enter width of squre</h2>
+    <input type="number" id="in2">
+
+    <h3 id="area"></h3>
+</body>
+</html>
+
+<script>
+    
+    let height = document.getElementById("in1").value
+    let width = document.getElementById("in2").value
+
+    rectangle =(height,width)=>{
+        area = height*width
+        return area
+    }
+
+    document.getElementById("area").innerHTML = rectangle(height,width)
+
+</script>
