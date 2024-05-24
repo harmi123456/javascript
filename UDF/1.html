@@ -19,7 +19,7 @@
 </html>
 <script>
     let str = document.getElementById("string1").value
-    let count = 1
+    let count = 0
 
     if(str === "")
     {
@@ -29,7 +29,6 @@
     {
         function charCount(str)
         {
-            document.getElementById("ans1").innerHTML = "Vowel in String is : "
             for(let i=0; str[i]; i++)
             {
                 if(str[i] === 'a' || str[i] === "A" ||
@@ -38,8 +37,9 @@
                 str[i] === 'o' || str[i] === "O" ||
                 str[i] === 'u' || str[i] === "U" )
                 {
-                    document.getElementById("ans1").innerHTML += count++ 
+                    count++
                 }
+                document.getElementById("ans1").innerHTML = "Vowel in String is : "+count
             }
         }
         charCount(str)
