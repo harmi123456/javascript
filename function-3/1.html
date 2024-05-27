@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial</title>
+</head>
+<body>
+    <h1>USING ERROW FUNCTION</h1>
+
+    <h3>Enter any number</h3>
+    <input type="number" id="fact1">
+
+    <h2 id="ans1"></h2> <br><hr><br>
+
+
+
+    <h1>USING FUNCTION EXPRESSION</h1>
+
+    <h3>Enter any number</h3>
+    <input type="number" id="fact2">
+
+    <h2 id="ans2"></h2> <br><hr><br>
+
+
+
+    <h1>USING IIFE FUNCTION</h1>
+
+    <h3>Enter any number</h3>
+    <input type="number" id="fact3">
+
+    <h2 id="ans3"></h2> <br><hr><br>
+
+
+
+    <h1>USING SIMPLE FUNCTION</h1>
+
+    <h3>Enter any number</h3>
+    <input type="number" id="fact4">
+
+    <h2 id="ans4"></h2> <br><hr><br>
+
+
+
+    
+
+</body>
+</html>
+
+<script>
+    //using arrow function
+    let factorial_1 = document.getElementById("fact1").value
+
+    if(factorial_1 === ""){
+        document.getElementById("ans1").innerHTML = "Invalid number...!"
+    } else {
+            let fact_1=(factorial_1)=>{
+            if(factorial_1 <= 1){
+                return 1
+            } else{
+                return factorial_1 * fact_1(factorial_1 - 1)
+            }
+        } 
+        document.getElementById("ans1").innerHTML = "Factorial of " +factorial_1 + " is : "+ fact_1(factorial_1)
+
+    }
+
+
+    //function expression
+    let factorial_2 = document.getElementById("fact2").value
+
+    if(factorial_2 === ""){
+        document.getElementById("ans2").innerHTML = "Invalid number...!"
+    } else {
+            function fact_2(factorial_2){
+            if(factorial_2 <= 1){
+                return 1
+            } else {
+                return factorial_2 * fact_2(factorial_2 - 1)
+            }
+        }
+        document.getElementById("ans2").innerHTML = "Factorial of "+factorial_2+ " is : "+ fact_2(factorial_2)
+
+    }
+
+
+    //IIFE
+    let factorial_3 = document.getElementById("fact3").value
+
+    if(factorial_3 === ""){
+        document.getElementById("ans3").innerHTML = "Invalid number...!"
+    } else {
+        document.getElementById("ans3").innerHTML = "factorial of &nbsp;"+factorial_3+" is : "+
+        (function fact_3(factorial_3){
+            if(factorial_3 <= 1){
+                return 1
+            } else {
+                return factorial_3 * fact_3(factorial_3 - 1)
+            }
+        }) (factorial_3)
+
+    }
+
+
+    //using simple function
+    let factorial_4 = document.getElementById("fact4").value
+    
+    if(factorial_4 === ""){
+        document.getElementById("ans4").innerHTML = "Invalid number...!"
+    } else {
+            function fact_4(factorial_4){
+            if(factorial_4 <= 1){
+                return 1
+            } else {
+                return factorial_4 * fact_4(factorial_4 - 1)
+            }
+        }
+        document.getElementById("ans4").innerHTML = "Factorial of "+factorial_4+ " is : "+ fact_4(factorial_4)
+
+
+    }
+
+
+
+</script>
