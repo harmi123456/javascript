@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY</title>
+</head>
+<body>
+    <!-- //Question - 1 -->
+    <h1>1. CREATE EMPTY ARRAY</h1>
+
+    <h3>Enter starting point : <input type="number" id="start1"></h3>
+    <h3>Enter ending point : <input type="number" id="end1"></h3>
+
+    <h2 id="ans1"></h2> <br><br><hr><br>
+
+
+    <!-- //Question - 2 -->
+    <h1>2. POP IN ARRAY</h1>
+
+    <h3>Enter starting point : <input type="number" id="start2"></h3>
+    <h3>Enter ending point : <input type="number" id="end2"></h3>
+
+    <h2 id="ans2"></h2> <br><br><hr><br>
+
+
+
+    <!-- //Question - 3 -->
+    <h1>3. GIVEN COLORS USING SHIFT METHOD</h1>
+    <h2 id="ans3"></h2><hr><br>
+
+
+    <!-- //Question - 4 -->
+    <h1>4. CREATE ANIMALS LIST USING UNSHIFT FUNCTION</h1>
+    <h2 id="ans4"></h2> <br><br><hr><br>
+
+
+    <!-- //Question - 5 -->
+    <h1>5. POP ALPHABATS</h1>
+
+
+    <h2 id="ans5"></h2> <br><br><hr><br>
+
+
+    <!-- //Question - 6 -->
+    <h1>6. REVERSE THE ARRAY</h1>
+
+    <h2>Enter starting point : <input type="text" id="start6"></h2>
+    <h2>Enter ending point : <input type="text" id="end6"></h2>
+
+    <h3 id="ans6"></h3> <br><br><hr><br>
+
+
+
+    <!-- //Question - 7 -->
+
+    <h1>7. SORT THE ARRAY</h1>
+
+    <h2 id="ans7"></h3> <br><br><hr><br>
+
+
+
+    <!-- //Question - 8 -->
+    <h1>8. PRINT TODAY'S DATE</h1>
+    <h2 id="ans8"></h2><br><br><hr><br>
+
+
+    <!-- //Question - 9 -->
+    <h1>9. CONCAT TWO STRINGS</h1>
+
+    <h3>Enter first string : <input type="text" id="str1"></h3>
+    <h3>Enter second string : <input type="text" id="str2"></h3>
+
+    <h2 id="ans9"></h2> <br><br><hr><br>
+
+
+    <!-- //Question - 10 -->    
+    <h1>CONVERT STRING INTO UPPERCASE</h1>
+
+    <h3>Enter any string : <input type="text" id="upper"></h3>
+
+    <h2 id="ans10"></h2><br><br><hr><br>
+
+
+    <!-- //Question - 11 -->
+    <h1>CONVERT STRING INTO LOWECASE</h1>
+
+    <h3>Enter any string : <input type="text" id="lower"></h3>
+
+    <h2 id="ans11"></h2><br><br><hr><br>
+
+
+
+
+    <!-- //Question - 13 -->
+    <h1>FIND VOWELS IN STRING USING CHARAT FUNCTION</h1>
+
+    <h2 id="ans13"></h2> <br><br><hr><br>
+
+
+
+    <!-- //Question - 14 -->
+    <h1>USING UNSHIFT ADD 5 ELEMENTS</h1>
+    
+    <h2 id="ans14"></h2> <br><br><hr><br>
+
+    
+
+    <!-- //Question - 15 -->
+    <h1>USING SHIFT REMOVE 2 ELEMENTS</h1>
+    
+    <h2 id="ans15"></h2> <br><br><hr><br>
+
+
+
+
+    <!-- //Question - 16 -->
+    <h1>Remove 2nd index element and add 3 elements using splice</h1>
+    
+    <h2 id="ans16"></h2>
+
+
+
+
+</body>
+</html>
+
+<script>
+    //Question - 1
+    let arr1 = [];
+    let array_start1 = document.getElementById("start1").value
+    let array_end1 = document.getElementById("end1").value
+
+    for(let i=array_start1; i<=array_end1; i++){
+        arr1.push(i)
+    }
+    document.getElementById("ans1").innerHTML = "Your array "+array_start1 +" to " + array_end1 + " is : "+  arr1
+
+    //Question - 2
+    let arr2 = [];
+    let array_start2 = document.getElementById("start2").value
+    let array_end2 = document.getElementById("end2").value
+
+    for(let i=array_start2; i<=array_end2; i++){
+        arr2.push(i)      
+    }
+    arr2.pop()
+    document.getElementById("ans2").innerHTML = arr2
+
+
+    //Question - 3
+    let arr3 = ["blue","red","green","pink","grey","majanta"];
+
+    document.getElementById("ans3").innerHTML = "All colors of the array are : "+arr3+ "<br>"
+
+    for(let i=arr3.length-1; i>=0; i--){
+    }
+    arr3.shift()
+
+    document.getElementById("ans3").innerHTML += "shifted colours : "+ arr3
+
+
+    //Question - 4
+    let arr4 = ['lion','tiger','elephant'];
+
+    document.getElementById("ans4").innerHTML = "All the animals are : "+arr4+ "<br>"
+    arr4.unshift('giraffe')
+    arr4.unshift('Zebra')
+
+    document.getElementById("ans4").innerHTML += "After unshift animals our array is : " +arr4
+
+
+    //Question - 5
+    let alpha = ["a","b","c","d","e","f","g","h","i","j","k","l"];
+
+    document.getElementById("ans5").innerHTML = "All characters of an array is : "+alpha+ "<br>"
+    for(let i=alpha.length-1; i>=0; i--){
+        alpha.pop(i)
+    }
+    console.log(alpha)
+    // alpha.pop()
+    document.getElementById("ans5").innerHTML += "All characters are remove from an array"
+
+  
+
+    //Question - 6
+    let arr6 = [];
+    let array_start6 = document.getElementById("start6").value
+    let array_end6 = document.getElementById("end6").value
+        
+    for(let i=array_start6; i<=array_end6; i++){
+        arr6.push(i)
+    }
+    arr6.reverse()
+    document.getElementById("ans6").innerHTML ="Your array "+array_start6+ " to "+array_end6+ " between reverse elements are : "+ arr6
+
+
+
+    //Question - 7
+    let arr7= [9,5,6,4,7,2,8];
+    document.getElementById("ans7").innerHTML = "All the elemenets of an array is : "+arr7+ "<br>"
+    arr7.sort()
+    document.getElementById("ans7").innerHTML += "sorted elements are : " +arr7
+
+
+
+    //Question - 8
+    let date = new Date()
+    document.getElementById("ans8").innerHTML ="Today's date is : " +date
+    console.log(date)
+
+
+
+    //Question - 9
+
+    let string1 = document.getElementById("str1").value
+    let string2 = document.getElementById("str2").value
+
+    document.getElementById("ans9").innerHTML = string1.concat("&nbsp;"+ string2)
+
+
+
+    //Question - 10
+
+    let str_upper = document.getElementById("upper").value
+    document.getElementById("ans10").innerHTML = str_upper.toUpperCase()
+
+    
+
+    //Question - 11
+
+    let str_lower = document.getElementById("lower").value
+    document.getElementById("ans11").innerHTML = str_lower.toLowerCase()
+
+
+
+    //Question - 13
+    let str_char = "harmi";
+
+    document.getElementById("ans13").innerHTML = "Your string is : "+str_char + "<br>"
+    document.getElementById("ans13").innerHTML += "Vowels in the string are : "+ str_char.charAt(1)+" & "+ str_char.charAt(4)
+
+
+    //Question - 14
+    let arr_14 = ["a,b,c,d,e,f"]
+    
+    document.getElementById("ans14").innerHTML = "All the elements are : "+ arr_14+ "<br>"
+    arr_14.unshift("g")
+    arr_14.unshift("h")
+    arr_14.unshift("i")
+    arr_14.unshift("j")
+    arr_14.unshift("k")
+    arr_14.unshift("l")
+    arr_14.unshift("m")
+    arr_14.unshift("n")
+    arr_14.unshift("o")
+    arr_14.unshift("p")
+    arr_14.unshift("q")
+    arr_14.unshift("r")
+    arr_14.unshift("s")
+    arr_14.unshift("t")
+    arr_14.unshift("u")
+    arr_14.unshift("v")
+    arr_14.unshift("w")
+    arr_14.unshift("x")
+    arr_14.unshift("y")
+    arr_14.unshift("z")
+
+    arr_14.reverse()
+
+
+    document.getElementById("ans14").innerHTML +="After unshift the elements are : "+ arr_14
+
+
+
+
+
+    //Question - 15
+
+    let arr_15 = [1,2,3,4,5,6,7,8,9,10]
+    
+    document.getElementById("ans15").innerHTML = "All the elements are : "+ arr_15+ "<br>"
+    arr_15.shift()
+    arr_15.shift()
+
+    document.getElementById("ans15").innerHTML +="After shift the elements are : "+ arr_15
+
+
+
+    //Question - 16
+    let arr_16 = [1,2,3,5,6,7,8,9]
+
+    document.getElementById("ans16").innerHTML = "All the elements are : "+arr_16+ "<br>"
+    arr_16.splice(2,2,"Heii i'm splice the elements","3","4","5")
+
+    document.getElementById("ans16").innerHTML = "After splice elements are : "+arr_16
+
+
+</script>
