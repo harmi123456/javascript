@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRUITS</title>
+</head>
+<body>
+    <center> <br><br><br> 
+        <h1>Enter size of array : <input type="number" id="in"></h1>
+        <h2 id="ans"></h2> <br><br><br>
+    </center>
+</body>
+</html>
+
+<script>
+    let fruits = document.getElementById("in").value
+    let arr_fruit = []
+    for(let i=1; i<=fruits; i++){
+        let fruit = prompt("Enter fruit name : ");
+        document.getElementById("ans").innerHTML += i+ ". Fruit is : "+fruit+ "<br>" 
+        arr_fruit.push(fruit)
+    }
+    document.getElementById("ans").innerHTML += " <br> Index of apple is : "+ arr_fruit.indexOf("apple") + arr_fruit.indexOf("Apple") + arr_fruit.indexOf("APPLE")
+</script>

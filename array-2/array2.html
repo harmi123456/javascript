@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY-2</title>
+</head>
+<style>
+    hr{
+        width: 70%;
+    }
+</style>
+<body>
+    <center>
+           <!-- //Question - 1 --> <br><br>
+    <h1>DOUBLE EACH NUMBER USING MAP</h1>
+    <h2 id="ans1"></h2> <br><br><hr><br>
+
+
+    <!-- //Question - 2 -->
+    <h1>CHECK AGE BELOW 18</h1>
+    <h2 id="ans2"></h2> <br><br><hr><br>
+
+
+
+    <!-- //Question - 3 -->
+    <h1>FIND FRUITS USING INDEXOF FUNCTION</h1>
+    <h2 id="ans3"></h2> <br><br><hr><br>
+
+
+    <!-- //Question - 4 -->
+    <h1>CHECK GREEN COLOR AND RETURN A BOOLEAN VALUE</h1>
+    <h2 id="ans4"></h2> <br><br><hr><br>
+
+
+
+    <!-- //Question - 5 -->
+    <h1>CHECK EXAM SCORE ARE GRATER THAN OR EQUAL TO 60 USING EVERY FUNCTION</h1>
+    <h2 id="ans5"></h2> <br><br><hr><br>
+
+
+
+    <!-- //Question - 6 -->
+    <h1>CHECK TEMPERATURES ARE GREATER THAN 100 DEGREES USING SOME FUNCTION</h1>
+    <h2 id="ans6"></h2> <br><br><hr><br>
+
+
+
+    <!-- //Question - 7 -->
+    <h1>ADD 1 IN EACH ELEMENT USING MAP FUNCTION</h1>
+    <h2 id="ans7"></h2> <br><br><hr><br>
+
+
+    <!-- //Question - 8 -->
+    <h1>FIND EVEN NUMBER USING FILTER FUNCTION</h1>
+    <h2 id="ans8"></h2> <br><br><hr><br>
+
+
+    <!-- //Question - 9 -->
+    <h1>FIND ODD NUMBER USING FILTER FUNCTION</h1>
+    <h2 id="ans9"></h2> <br><br><br>
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    //Question - 1
+    let arr_1 = [1,2,3,4,5,6]
+
+    document.getElementById("ans1").innerHTML = "All the elements of array is : "+arr_1+ "<br>"
+    let ans1 = arr_1.map((element_1)=>{
+        return element_1*2
+    })
+    document.getElementById("ans1").innerHTML +="Doble of elements are : "+ ans1
+
+
+
+    //Question - 2
+    let arr_2 = [18,2,25,4,34]
+
+    document.getElementById("ans2").innerHTML = "All the age in array are : "+ arr_2+ "<br>"
+    let ans2 = arr_2.filter((age)=>{
+        return age >= 18
+    })  
+    document.getElementById("ans2").innerHTML += "Ages that are greater then 18 => "+ ans2
+
+
+    //Question - 3
+    let fruits = ["Mango","Kiwi","Grapes","Pineapple","Apple","Banana"]
+
+    document.getElementById("ans3").innerHTML = "All the fruits in array are : "+fruits+ "<br>"
+    document.getElementById("ans3").innerHTML += "Index of apple is : "+ fruits.indexOf("Apple")
+
+
+    //Question - 4
+    let colors = ["Red","Yellow","Pink","Blue","Green","Orange"]
+
+    document.getElementById("ans4").innerHTML = "All the colors in array are : "+colors + "<br>"
+    document.getElementById("ans4").innerHTML +="Boolean value of green color : "+ colors.includes("Green")+"&nbsp;&nbsp; <br> Index of green color is : " + colors.indexOf("Green")
+
+    //Question - 5
+    let score = [70,60,89,94,100,78]
+
+    document.getElementById("ans5").innerHTML = "All the score in array are : "+score+ "<br>"
+    function check_score(score){
+        return score >= 60
+    }
+    document.getElementById("ans5").innerHTML += score.every(check_score) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yess All score are greater than 60"
+
+
+    //Question - 6
+    let temperature = [10,20,30,40,87,101]
+
+    document.getElementById("ans6").innerHTML = "All the temperature in array are : "+temperature+ "<br>"
+    function check_temp(temperature){
+        return temperature >= 100
+    }
+    document.getElementById("ans6").innerHTML += temperature.some(check_temp)+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In array there is one temperature is above 100"
+
+
+    //Question - 7
+    let arr_7 = [6,7,8,9,10]
+
+    document.getElementById("ans7").innerHTML = "All elements in array are : "+arr_7+ "<br>"
+    let ans7 = arr_7.map((plus_one)=>{
+        return plus_one + 1
+    })
+    document.getElementById("ans7").innerHTML +="Final ans is : " +ans7
+
+
+    //Question - 8
+    let NUMBER = [1,2,30,4,5,6,7,8,9]
+
+    document.getElementById("ans8").innerHTML = "All the elements in array are : "+NUMBER+ "<br>"
+    let even = NUMBER.filter((even_num)=>{
+        return even_num %2 === 0
+    })
+    document.getElementById("ans8").innerHTML +="Even numbers are : " +even
+
+
+
+    //Question - 9
+    let number = [1,2,30,4,5,6,7,8,9]
+
+    document.getElementById("ans9").innerHTML = "All the elements in array are : "+NUMBER+ "<br>"
+    let odd = number.filter((odd_num)=>{
+        return odd_num %2 != 0
+    })
+    document.getElementById("ans9").innerHTML +="Odd numbers are : " +odd
+
+</script>

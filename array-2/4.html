@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color</title>
+</head>
+<body>
+    <center> <br><br>
+        <h1>Enter size of array : <input type="number" id="in"></h1>
+        <h2 id="ans"></h2> <br><br><br>
+    </center>
+</body>
+</html>
+<script>
+    let color = document.getElementById("in").value
+    let arr_color = []
+
+    for(let i=1; i<=color; i++){
+        let col = prompt("Enter color name :");
+        document.getElementById("ans").innerHTML += i+ ". color name is : "+ col + "<br>"
+        arr_color.push(col)
+    }
+
+    document.getElementById("ans").innerHTML +="<br> Boolean value of green color is : "+ arr_color.includes("green")
+</script>

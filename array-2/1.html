@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY-2</title>
+</head>
+<style>
+    hr{
+        width: 70%;
+    }
+</style>
+<body>
+    <center> <br><br>
+        <!-- //Question - 1 -->
+        <h1>DOUBLE ALL NUMBERS USING MAP FUNCTION</h1>
+
+        <h3>Enter size of array : <input type="number" id="in1"></h3>
+        <h2 id="ans1"></h2> <br><br><hr><br>
+
+        <!-- //Question - 2 -->
+    </center>
+</body>
+</html>
+
+
+<script>
+    let size_1 = document.getElementById("in1").value
+    let arr_1 = []
+        for(let i=1; i<=size_1; i++){
+            let num = prompt("Enter number :");
+            document.getElementById("ans1").innerHTML += i+ "Number is : "+num+ "<br>"
+            arr_1.push(num)
+        }
+        document.getElementById("ans1").innerHTML += "<br> Double of All elemenet is : "
+
+        let fun_1 = arr_1.map((element_1) => {
+            return element_1 * 2
+        })
+        document.getElementById("ans1").innerHTML += fun_1 
+</script>
+    
+<!-- <script src="array2.js"></script> -->

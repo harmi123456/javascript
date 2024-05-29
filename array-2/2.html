@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGE</title>
+</head>
+<body>
+    <center> <br><br><br>
+        <h1>Enter size of array : <input type="number" id="in2"></h1>
+        <h2 id="ans2"></h2> <br><br><br>
+    </center>
+</body>
+</html>
+<script>
+      let size_2 = document.getElementById("in2").value
+      let arr_2 = []
+     for(let i=1; i<=size_2; i++){
+        let num_2 = prompt("Enter age :");
+        document.getElementById("ans2").innerHTML += i+ "Number is : "+num_2+ "<br>"
+        arr_2.push(num_2)
+     }
+     document.getElementById("ans2").innerHTML += "<br> age above 18 are : "
+
+     let fun_2 = arr_2.filter((element_2) => {
+        return element_2 >= 18
+     })
+
+     document.getElementById("ans2").innerHTML += fun_2
+</script>

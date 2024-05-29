@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCORE</title>
+</head>
+<body>
+    <center> <br><br>
+        <h1>Enter size of array : <input type="number" id="in"></h1>
+        <h2 id="ans"></h2> <br><br><br>
+    </center>
+</body>
+</html>
+<script>
+
+    let score = document.getElementById("in").value
+    let arr_score = []
+
+    for(let i=1; i<=score; i++){
+        let SCORE = prompt("Enter your exam score : ");
+        document.getElementById("ans").innerHTML += i + ". score is : "+SCORE+ "<br>"
+        arr_score.push(SCORE)
+    }
+    document.getElementById("ans").innerHTML += "Score greater than 60 are : "
+
+    function score(SCORE){
+        return SCORE >= 60
+    }
+    document.getElementById("ans").innerHTML += SCORE.every(score)
+
+</script>
+
