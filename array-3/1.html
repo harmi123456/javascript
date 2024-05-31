@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY</title>
+</head>
+<style>
+    hr{
+        width: 70%;
+    }
+    body{
+        background-color: rgba(233, 199, 204, 0.574);
+    }
+    h1{
+        color: maroon;
+    }
+</style>
+<body>
+    <!-- //Question - 1 -->
+
+    <center> <br><br>
+        <h1>MULTIPLY EACH ELEMENT USING FOREACH</h1>
+        <h2 id="ans1"></h2> <br><br><hr><br>
+   
+    <!-- //Question - 2 -->
+        <h1>SUM OF ALL ELEMENT USING REDUCE</h1>
+        <h2 id="ans2"></h2> <br><br><hr><br>
+
+    <!-- //Question - 3 -->
+        <h1>FIND PRODUCT OF ALL ELEMENTS USING FILTER AND REDUCE FUNCTION</h1>
+        <h2 id="ans3"></h2> <br><br><hr><br>
+
+    <!-- //Question - 4 -->
+        <h1>FIND SUM OF ALL EVEN NUMBERS USING FILTER AND REDUCE FUNCTION</h1>
+        <h2 id="ans4"></h2> <br><br><hr><br>
+    
+
+    <!-- //Question - 5 -->
+        <h1>FIND LENGTH OF ALL ELEMENTS WHICH ARE GRATER THAN 4 USING MAP AND FILTER FUNCTION</h1>
+        <h2 id="ans5"></h2> <br><br><hr><br>
+
+    
+    <!-- //Question - 6 -->
+        <h1>FIND ELEMENT THAT PRESENT IN ARRAY USING INCLUDE KEYWORD</h1>
+        <h2 id="ans6"></h2> <br><br><hr><br>
+
+
+    <!-- //Question - 7 -->
+        <h1>FIND SQURE OF EVEN NUMBER</h1>
+        <h2 id="ans7"></h2> <br><br><hr><br>
+
+    
+    <!-- //Question - 8 -->
+        <h1>FIND NAME THAT LESS THAN FIVE CHARACTERS AND CONVERT INTO UPPERCASE</h1>
+        <h2 id="ans8"></h2> <br><br><br><br><br>
+
+
+    </center>
+</body>
+</html>
+
+<script>
+
+    //Question - 1
+
+    let arr_1 = [1,2,3,4,5,6,7,8]
+
+    document.getElementById("ans1").innerHTML = "All the characters in array are : "+arr_1+ "<br><br> Multiply each element by 3 : "
+
+    arr_1.forEach((element_1) => {
+        let MULTIPLY = element_1 * 3 + "&nbsp;&nbsp;&nbsp;&nbsp;"
+        console.log(MULTIPLY)
+        document.getElementById("ans1").innerHTML +=  MULTIPLY
+    })
+
+    //Question - 2
+
+    let arr_2 = [1,2,3,4,5,6,7,8,9]
+
+    document.getElementById("ans2").innerHTML = "All the elemenets in array are : "+arr_2 + "<br><br>"
+    let sum = arr_2.reduce((acc , curr) => {
+        return acc + curr
+    },0)
+    
+    document.getElementById("ans2").innerHTML += "Sum of element are : "+ sum
+
+
+    //Question - 3
+
+    let arr_3 = [1,6,3,4,5]
+
+    document.getElementById("ans3").innerHTML = "All the elements in array are : "+arr_3+ "<br><br>"
+
+    let product = arr_3.filter((element_2) => {
+        return element_2
+    }).reduce((pro_1 , pro_2) => {
+        return +pro_1 * +pro_2
+    },1)
+
+    document.getElementById("ans3").innerHTML +="Product of all elements are : "+ product
+
+
+    //question - 4
+
+    let arr_4 = [1,2,3,4,5,6,8]
+
+    document.getElementById("ans4").innerHTML = "All the elements in array are : "+arr_4+ "<br><br>"
+
+    let even = arr_4.filter((element_3) => {
+        return element_3 %2 == 0
+    }).reduce((eve_1 , eve_2) => {
+        return eve_1 + eve_2
+    },0)
+    // document.getElementById("ans4").innerHTML += "Even nubers are : "+ element_3 + "<br>"
+    document.getElementById("ans4").innerHTML += even
+
+
+
+    //Question - 5
+
+    let arr_5 = ["Deep","Harmii","Komal","Yami","Man","Mahi","Satvi"]
+
+    document.getElementById("ans5").innerHTML += "All elements in array are : "+arr_5+ "<br><br>"
+
+    let name = arr_5.filter((person) => {
+        return person.length > 4
+    }).map((person_1) => {
+        return person_1
+    })
+
+    document.getElementById("ans5").innerHTML += "Name which length above 4 character : " +name 
+
+
+
+    //Question - 6
+
+    let arr_6 = ["harmii","keval","jaimin","astha","bhakti"]
+
+    document.getElementById("ans6").innerHTML = "All elements in array are : "+arr_6+ "<br><br>"+ arr_6.includes("harmii")
+
+    
+    //Question - 7
+
+    let arr_7 = [1,2,3,4,5,6,7,8]
+
+    document.getElementById("ans7").innerHTML = "All the numbers in array are : "+arr_7+ "<br><br>"
+
+    let squre = arr_7.filter((squre_1) => {
+        return squre_1 %2 === 0
+    }).map((squre_2) => {
+        return squre_2 * squre_2
+    })
+
+    document.getElementById("ans7").innerHTML += "Squre of even numbers are : " +squre
+
+
+    //Question - 8
+
+    let arr_8 = ["harmii","keval","jaimin","astha","bhakti","meet","jeet","deep","man","mahi"]
+
+    document.getElementById("ans8").innerHTML = "All elements in array are : "+arr_8+ "<br><br>"
+
+    let upper = arr_8.filter((str) => {
+        return str.length < 5
+    }).map((str) => {
+        return str.toUpperCase()
+    })
+
+    document.getElementById("ans8").innerHTML += upper
+
+
+</script>
