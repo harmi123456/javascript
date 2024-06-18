@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT</title>
+</head>
+<body>
+   
+    <center> <br><br>
+        <h2 id="container"></h4> 
+        <h1 id="ans"></h3>
+    </center>
+</body>
+</html>
+
+<script>
+
+    let Quotes = [ 
+        {
+            text : "Nature is the source of all true knowledge.",
+            author : "Leonardo da Vinci ",
+            category : "Nature"
+        },
+        {
+            text : "The beautiful thing about learning is that no one can take it away from you.",
+            author : "B.B. King",
+            category : "Education"
+        },
+        {
+            text : "The mind is not a vessel to be filled, but a fire to be kindled.",
+            author : "Plutarch",
+            category : "Education"
+        },
+        {
+            text : "Your self-worth is determined by you.",
+            author : "Wayne W. Dyer",
+            category : "inspiration"
+        }      
+    ]
+
+    const container = document.getElementById('container');
+  
+    for(let i = 0; i<Quotes.length; i++){
+        container.innerHTML += "Quote : &nbsp&nbsp"+ Quotes[i].text +"<br>";
+        container.innerHTML += "Author : &nbsp"+ Quotes[i].author +"<br>";
+        container.innerHTML += "Category : &nbsp "+ Quotes[i].category +"<br> <br>";
+    }
+   
+
+    let ans = Quotes.filter((el) => {
+        return el.category == "Education"
+    }).map((el) => {
+        return el.text + "<br>"
+    })
+    document.getElementById("ans").innerHTML += "Quotes who's Category is Education Given below : <br><br>"
+    console.log(ans)
+    document.getElementById("ans").innerHTML += ans
+
+
+</script>

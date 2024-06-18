@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT</title>
+</head>
+<body>
+    <center>
+
+        <!-- //Question - 1 -->
+        <br><br>
+        <h1>'Capital' Object</h1>
+        <h3 id="ans1"></h3> <br><br><hr style="width: 70%;"><br>
+
+
+        <!-- //Question - 2 -->
+
+        <h1>Marks > 60</h1>
+        <h3 id="ans2"></h3> <br><br><hr style="width: 70%;"><br>
+
+
+        <!-- //Question - 3 -->
+
+        <h1>Marks > 60 && Rollno > 15</h1>
+        <h3 id="ans3"></h3> <br><br><hr style="width: 70%;"><br>
+
+        <!-- //Question - 4 -->
+
+        <h1>Sum of Marks of All Students</h1>
+        <h3 id="ans4"></h3> <br><br><hr style="width: 70%;"><br>
+
+
+        <!-- //Question - 5 -->
+
+        <h1>Name of students Who Scored more than 60</h1>
+        <h3 id="ans5"></h3> <br><br><hr style="width: 70%;"><br>
+
+
+        <!-- //Question - 6 -->
+
+        <h1>Add 20 into marks</h1>
+        <h3 id="ans6"></h3> <br><br><br>
+
+
+    </center>
+</body>
+</html>
+
+<script>
+
+    let student = [ 
+    {
+        Name : "Harmii",
+        Rollno : 25,
+        marks : 99
+    } , 
+    {
+        Name : "Aastha",
+        Rollno : 25,
+        marks : 97  
+    } ,
+    {
+        Name : "Komal",
+        Rollno : 3,
+        marks : 110
+    },
+    {
+        Name : "Bhakti",
+        Rollno : 44,
+        marks : 88
+    } ,
+    {
+        Name : "Mansii",
+        Rollno : 5,
+        marks : 50
+    } ]
+
+    //Question - 1
+
+    let ans_1 = student.map((upper) => {   
+        return upper.Name.toUpperCase()
+    })
+    console.log(ans_1)
+    document.getElementById("ans1").innerHTML += ans_1 
+
+
+
+    //Question - 2
+
+    let ans_2 = student.filter((greater) => {
+        return greater.marks > 60
+    }).map((greater) => {
+        return "Name : "+ greater.Name+ "<br>" + " Roll no : " + greater.Rollno + "<br>" + "Marks : "+ greater.marks + "<br><br>"
+    })
+    console.log(ans_2)
+    document.getElementById("ans2").innerHTML += "Students Who scored more then 60 marks : <br><br>"+ ans_2
+
+
+
+    //Question - 3
+
+    let ans_3 = student.filter((more) => {
+        return more.marks > 60 && more.Rollno > 15
+    }).map((more) => {
+        return "Name : "+ more.Name+ "<br>" + " Roll no : " + more.Rollno + "<br>" + "Marks : "+ more.marks + "<br><br>"
+    })
+    console.log(ans_3)
+    document.getElementById("ans3").innerHTML += "Students Who Scored more then 60 And their Roll no is greater then 15 <br><br>"+ ans_3
+
+
+    //Question - 4
+
+    let ans_4 = student.reduce((acc,curr) => {
+        return acc + curr.marks
+    },0)
+    console.log(ans_4)
+    document.getElementById("ans4").innerHTML +="Sum OF Marks of All Students : "+ ans_4
+
+    //Question - 5
+
+    let ans_5 = student.filter((name) => {
+        return name.marks > 60
+    }).map((el) => {
+        return el.Name 
+    })
+    console.log(ans_5)
+    document.getElementById("ans5").innerHTML = ans_5
+
+
+    //Question - 6
+    document.getElementById("ans6").innerHTML += " Marks of All students <br><br>"
+    let ans_6 = student.map((mark) => {
+        return mark.Name + " : "+ mark.marks
+    })
+    document.getElementById("ans6").innerHTML += ans_6 + "<br><br><br> After adding 20 into the marks <br><br>"
+
+    let ans6 = student.map((mk) => {
+        return mk.Name + " : " + (mk.marks + 20)
+    })
+    document.getElementById("ans6").innerHTML += ans6
+
+</script>
