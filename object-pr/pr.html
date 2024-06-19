@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR OBJECT</title>
+</head>
+<style>
+    body{
+        background-color: rgba(19, 80, 41, 0.498);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h1{
+        color: rgba(255, 255, 255, 0.559);
+        font-family: cursive;
+    }
+    h3{
+        color: rgb(4, 56, 4);
+    }
+</style>
+<body>
+    <center>
+
+        <!-- //Question - 1 -->
+        <br>
+        <h1>Student Object</h1>
+        <h3 id="ans1"></h3> <br><br><hr style="width: 70%;"><br>
+
+        <!-- //Question - 2 -->
+        
+        <h1>Quotes Object</h1>
+        <h3 id="ans2"></h3> <br><br><hr style="width: 70%;"><br>
+
+
+        <!-- //Question - 3 -->
+
+        <h1>Book Object</h1>
+        <h3 id="ans3"></h3> <br><br><br>
+
+
+    </center>
+</body>
+</html>
+
+<script>
+
+let student = [ 
+    {
+        Name : "Harmii",
+        Rollno : 25,
+        marks : 99
+    },
+    {
+        Name : "Aastha",
+        Rollno : 25,
+        marks : 97  
+    } ,
+    {
+        Name : "Komal",
+        Rollno : 3,
+        marks : 110
+    },
+    {
+        Name : "Bhakti",
+        Rollno : 44,
+        marks : 88
+    } ,
+    {
+        Name : "Mansii",
+        Rollno : 5,
+        marks : 50
+    } ]
+
+
+
+    //Question - 1
+
+    document.getElementById("ans1").innerHTML += "Using HOF : <br>"
+    let stud = student.filter((stud_1) => {
+        return stud_1.marks > 90
+    }).map((stud_1) => {
+        return stud_1.Name
+    })
+    console.log(stud)
+    document.getElementById("ans1").innerHTML += stud + "<br> <br><br>"
+
+
+    const container = document.getElementById('ans1');
+    container.innerHTML += "Using Loop : <br>"
+    for(let i = 0; i<student.length; i++){
+        if(student[i].marks > 90){
+            container.innerHTML +=  student[i].Name +"<br>";
+        }
+    }
+
+
+    //Question - 2
+
+    let Quotes = [ 
+        {
+            text : "Nature is the source of all true knowledge.",
+            author : "Leonardo da Vinci ",
+            category : "Nature"
+        },
+        {
+            text : "The beautiful thing about learning is that no one can take it away from you.",
+            author : "B.B. King",
+            category : "Education"
+        },
+        {
+            text : "The mind is not a vessel to be filled, but a fire to be kindled.",
+            author : "Plutarch",
+            category : "Education"
+        },
+        {
+            text : "Your self-worth is determined by you.",
+            author : "Wayne W. Dyer",
+            category : "inspiration"
+        }      
+    ]
+
+
+    const container_1 = document.getElementById('ans2');
+  
+    for(let i = 0; i<Quotes.length; i++){
+      container_1.innerHTML += "Quote : &nbsp&nbsp"+ Quotes[i].text +"<br>";
+      container_1.innerHTML += "Author : &nbsp"+ Quotes[i].author +"<br>";
+      container_1.innerHTML += "Category : &nbsp "+ Quotes[i].category +"<br> <br>";
+    }
+ 
+
+    let quote = Quotes.filter((el) => {
+        return el.category == "Education"
+    }).map((el) => {
+        return el.text + "<br>"
+    })
+    document.getElementById("ans2").innerHTML += "Quotes who's Category is Education Given below : <br><br>"
+    console.log(quote)
+    document.getElementById("ans2").innerHTML += quote
+
+
+
+    //Question - 3
+
+    let Book = [ 
+        {
+            title : "Pride and Prejudice",
+            author : "Jane Austen",
+            price : "$55",
+            Quantity : "True"
+        },
+        {
+            title : "House of Cards",
+            author : "Sudha Murty",
+            price : "$60",
+            Quantity : "True"
+        },
+        {
+            title : "One Arranged Murder",
+            author : "Chetan Bhagat",
+            price : "$45",
+            Quantity : "False"
+        },
+        {
+            title : "Wish I Could Tell You",
+            author : "Durjoy Datta",
+            price : "$50",
+            Quantity : "True"
+        }
+    ]
+        const container_2 = document.getElementById('ans3');
+        for(let i = 0; i<Book.length; i++) {
+            container_2.innerHTML += "Title : &nbsp&nbsp"+ Book[i].title + "<br>"
+            container_2.innerHTML += "Author : &nbsp&nbsp"+ Book[i].author + "<br>"
+            container_2.innerHTML += "Price : &nbsp&nbsp"+ Book[i].price + "<br>"
+            container_2.innerHTML += "Quantity : &nbsp&nbsp"+ Book[i].Quantity + "<br><br>"
+        }
+
+        let book = Book.filter((bk) => {
+            return bk.Quantity == "True" && bk.price <= "$60"
+        }).map((bk) => {
+            return "Title : "+ bk.title + "<br> Price : " + bk.price + "<br> Quantity : " + bk.Quantity + "<br><br>"
+        })
+
+        container_2.innerHTML += "<br><br> Book Which price less than 60 & Quantiy available : <br><br>" +book
+</script>
