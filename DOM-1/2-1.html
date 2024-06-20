@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Enter your first name : <input id="first" type="text"></h1>
+    <h2>Enter your last name : <input id="last" type="text"></h2>
+
+    <h3 id="firstname"></h3>
+
+    <!-- <h3 id="lastname"></h3>
+
+    <h3 id="f_l"></h3> -->
+
+    <button onclick="setfirst(),removefst()" >click me to show your firstname</button>
+
+    <button onclick="setlast()">click me to show your lastname</button>
+
+    <button onclick="setall()">click me to show your fullname</button>
+    
+</body>
+</html>
+
+<script>
+    let first = document.getElementById("first").value
+    let last = document.getElementById("last").value
+
+    function setfirst() {
+        document.getElementById("firstname").textContent = first
+    }
+    function removefst() {
+        document.getElementById("firstname").style.color = "red"
+    }
+
+    function setlast() {
+        document.getElementById("firstname").textContent = last
+    }
+
+    function setall() {
+        document.getElementById("firstname").textContent = first + " "+last
+    }
+
+</script>

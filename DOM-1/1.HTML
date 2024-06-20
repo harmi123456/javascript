@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELECTOR</title>
+</head>
+<style>
+    button{
+        width: 10%;
+        height: 30px;
+        border-radius: 30px;
+        border: none;
+    }
+    button:hover{
+        background-color: lightpink;
+    }
+    .a{
+        width: 25%;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .a:hover{
+        width: 27%;
+        transition: 1s;
+        border-radius: 50%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: rgb(231, 159, 159);
+    }
+</style>
+<body>
+
+    <center>
+        <h1 class="green blue red">Good Evening</h1>
+    <button onclick="clrchg()" ondblclick="clrblk()">Red</button>
+
+
+    <h3 class="green blue red">The only thing we have to fear is fear itself.</h3>
+    <button onclick="clr_chg()" ondblclick="clr_blk()">Green</button>
+
+
+    <h5 class="green blue red">Life is God's novel.</h5>
+    <button onclick="clr_blue()" ondblclick="clr__blk()">Blue</button>
+    <br><br><br>
+
+    <button class="a" onclick="color_green()">Click me for color : Green</button> <br> <br>
+    <button class="a" onclick="color_blue()">click me for color : Blue</button> <br><br>
+    <button class="a" onclick="color_red()">Click me for color : red </button>
+
+    </center>
+
+</body>
+</html>
+
+<script>
+
+    function clrchg() {
+        document.querySelector("h1").style.color = "red"
+    }
+    function clrblk() {
+        document.querySelector("h1").style.color = "Black"
+    }
+
+
+    function clr_chg() {
+        document.querySelector("h3").style.color = "Green"
+    }
+    function clr_blk() {
+        document.querySelector("h3").style.color = "Black"
+    }
+
+
+    function clr_blue() {
+        document.querySelector("h5").style.color = "blue"
+    }
+    function clr__blk() {
+        document.querySelector("h5").style.color = "black"
+    }
+
+
+
+    function color_green() {
+        let first = document.querySelectorAll(".green")
+
+        for(let i=0; i<first.length; i++){
+            first[i].style.color = "green"
+        }
+    }
+
+    function color_blue() {
+        let second = document.querySelectorAll(".blue")
+
+        for(let i=0; i<second.length; i++) {
+            second[i].style.color = "blue"
+        }
+    }
+
+    function color_red() {
+        let third = document.querySelectorAll(".red")
+
+        for(let i=0; i<third.length; i++){
+            third[i].style.color = "red"
+        }
+    }
+
+
+</script>

@@ -1,0 +1,37 @@
+
+.main{
+    height: 210px;
+    width: 23%;
+    background-color: #d092dc5f;
+    /* border: 2px solid red; */
+    border-radius: 20px;
+}
+input{
+    height: 50px;
+    width: 43%;
+    font-size: larger;
+    font-family:'Courier New', Courier, monospace;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    border: 1px solid whitesmoke;
+    /* border: none; */
+}
+svg{
+    height: 20px;
+}
+button{
+    height: 20%;
+    width: 15%;
+    border: none;
+    background-color: #d092dc5f;
+    margin-top: -30px;
+}
+h3{
+    margin-top: -0px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.trash{
+    position: relative;
+    top: 3px;
+    /* margin-top: 3px; */
+}
