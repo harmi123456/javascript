@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO</title>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+
+    <h1>TO DO LIST</h1>
+    
+    <div>
+      
+      <form id="form">
+        <label for="task">Task Name</label><br />
+        <input id="task" type="text" placeholder="Enter Task Name" /><br />
+
+        <label for="priority">Priority </label><br />
+        <select id="priority">
+          <option value="">Select Priority</option>
+          <option value="High">High</option>
+          <option value="Low">Low</option>
+        <br /> <br>
+        </select>
+
+        <!-- <label for="Favourite">Favourite</label> -->
+        <input onclick="show()" type="submit"/>
+
+    
+      </form>
+
+
+      <table id="create_tr">
+        <!-- Dont change order of columns -->
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Priority</th>
+            <th>Favourite</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+
+
+    </div>
+
+  </body>
+
+</html>
+
+<script>
+   function show() {
+
+    event.preventDefault()
+
+    let task = document.getElementById("task").value
+    let priority = document.getElementById("priority").value
+
+    let new_row = "<tr><td>"+ task + "</td><td>" + priority + "</td></tr>";
+
+   document.querySelector('#create_tr tbody').innerHTML += new_row;
+
+   document.getElementById('form').reset(); 
+}
+</script>
