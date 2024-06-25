@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+</head>
+<style>
+    body{
+        background-color: rgba(195, 228, 147, 0.517);
+    }
+    label{
+        color: green;
+        font-size: 20px;
+    }
+    h1{
+        color: darkgreen;
+    }
+    input{
+        height: 30px;
+        border-radius: 50px;
+        border: 3px solid rgba(0, 100, 0, 0.319);
+        background-color: rgba(146, 242, 146, 0.543);
+        color: rgba(241, 60, 60, 0.876);
+    }
+</style>
+<body>
+    <center>
+        <br>
+        <h1>---FORM---</h1>
+    
+
+    <form action="" id="signup">
+        <label for="">Enter Your Name </label> <br>  
+        <input type="text" id="name"> <br><br>
+
+        <label for="">Enter Your Password  </label> <br>
+        <input type="text" id="pass"> <br><br>
+
+        <label for="">Confirm Password  </label> <br>
+        <input type="text" id="confirm"> <br><br>
+
+        <label for="">Date  </label> <br>
+        <input type="date" id="date"> <br><br>
+
+        <label for="">Write Your Hobby</label> <br>
+        <input type="text" id="hobby"> <br><br>
+
+        <label for="">Fill Your Email id </label> <br>
+        <input type="email" id="email"> <br><br>
+
+        <label for="">Enter Your Gender  </label> <br>
+        <input type="text" id="gender"> <br><br><br>
+
+        <input type="submit" placeholder="Submit Form"> <br><br>
+
+        <span id="err"></span>
+
+    </center>
+    </form>
+</body>
+</html> 
+<script>
+    document.getElementById("signup").onsubmit = function
+
+    (event) {
+        document.getElementById("err").innerHTML = ""
+        document.getElementById("err").style.color = "red"
+        document.getElementById("err").innerHTML = "Congrats..🥳  Your Form Has been submitted...Successfully"
+
+        event.preventDefault()
+
+        try{
+            let name = document.getElementById("name").value
+            let PassWord = document.getElementById("pass").value
+            let confirm = document.getElementById("confirm").value
+            let date = document.getElementById("date").value
+            let hobby = document.getElementById("hobby").value
+            let email = document.getElementById("email").value
+            let gender = document.getElementById("gender").value
+
+            if(name === "") {
+                throw new Error ("Oops... I Can't Find Your Name <br> Please Enter Your Name ")
+            }
+            if(PassWord === "") {
+                throw new Error ("Please Enter Valid Password")
+            }
+            if(PassWord.length < 8){
+                throw new Error ("Minimum 8 Characters Required...")
+            }
+            if(confirm !== PassWord) {
+                throw new Error ("Please Enter Your Correct Password")
+            }
+            if(date === "") {
+                throw new Error ("Please Enter valid date")
+            }
+            if(hobby === "") {
+                throw new Error ("Please Enter Your Hobby..")
+            }
+            if(email === "") {
+                throw new Error ("Please Enter Email")
+            }
+            if(gender === "") {
+                throw new Error ("Please select Your Gender")
+            }
+            
+
+
+        } catch(e) {
+            document.getElementById("err").innerHTML = e.message
+        }
+
+    }
+</script>
