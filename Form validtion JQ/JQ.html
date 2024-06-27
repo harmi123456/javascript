@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <title>FORM</title>
+
+    <link rel="stylesheet" href="JQ.css">
+
+</head>
+<body>
+    <br>
+    <div class="main">
+        <div class="form">
+            <form action="" id="signup">
+            <center>
+                <h1>Registration Form</h1>
+                <p style="margin-top: -20px; color: grey;">Fill Out the form carefully for Registration</p>
+            </center>
+
+            <h4 class="Student">Student Name</h4><br>
+            <input type="text" id="first">
+            <input type="text" id="last">
+            <h6 class="first">First Name</h6>
+            <h6 class="last">Last Name</h6>
+            <br><br>
+
+            <h4 class="gender">Gender <span class="email">Student E-mail</span></h4><br>
+            <select name="Please select" id="gender">
+                <option value="">Male</option>
+                <option value="">Female</option>
+                <option value="">Other</option>
+            </select>   
+            <input type="text" id="mail">  
+            <h6 class="ex">example@example.com</h6> 
+            <br><br>  
+            
+            <h4 class="stud">Student Id <span class="class">List Of Classes</span></h4><br>
+            <input type="number" id="id"> 
+
+            <select name="class" id="class">
+                <option value="">HTML & CSS</option>
+                <option value="">Data Structure</option>
+                <option value="">Machine Learning</option>
+                <option value="">Java Script</option>
+                <option value="">Python</option>
+            </select> 
+            <br>
+
+           <center>
+            <input type="submit" id="submit"> <br>
+            <span id="err"></span>
+           </center>
+           
+           <br>
+        </form>
+        </div>
+    </div>
+    
+
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $(".form").submit(function(event){
+
+            event.preventDefault()
+
+            $("#err").text("Congrats... Your Form has been Submitted Successfully....")
+
+            let name = $("#first").val()
+            let rjname = /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/
+
+            if(name === ""){
+                $("#err").text("Please Enter Name")
+            } else if(!rjname.test(name)) {    
+                $("#err").text("Please Enter Valid name")
+            }
+
+            let last = $("#last").val()
+            if(last === ""){
+                $("#err").text("Please Enter Your Last Name")
+            }
+
+
+            let email = $("#mail").val()
+            let rjmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+            if(email === ""){
+                $("#err").text("Please Enter Email id")
+            } else if(!rjmail.test(email)){
+                $("#err").text("Enter valid mail id")
+            }
+
+            let stud = $("#id").val()
+            if(stud === "") {
+                $("#err").text("Student ID Must be Reqired")
+            }
+
+
+        })
+    })
+</script>
