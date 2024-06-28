@@ -1,0 +1,81 @@
+
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+.main{
+    height: 500px;
+    width: 40%;
+    /* border: 1px solid; */
+    border-radius: 30px;
+    background-color: white;
+    .ma_in{
+        height: 350px;
+        width: 65%;
+        /* border: 1px solid; */
+        .user{
+            text-align-last: left;
+        }
+        #user, #email, #password, #confirm{
+            height: 25px;
+            width: 100%;
+            position: relative;
+            top: -20px;
+        }
+        .mail, .pass, .confirm{
+            text-align-last: left;
+            margin-top: 0px;
+        }
+        input{
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid grey;
+        }
+        #submit{
+            height: 30px;
+            width: 40%;
+            color: white;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    }
+}
+
+/* /* //submit  */
+
+
+
+#submit {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: grad 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes grad {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
