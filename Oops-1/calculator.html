@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=0, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <center> <br><br>
+        <h1>Object Oriented Programming</h1> <br>
+        <h2>----- Calculator class -----</h2>
+
+        <h2>For Addition</h2>
+        <h3>Enter First Value : <input type="number" id="first"></h3>
+
+        <h3>Enter Second Value : <input type="number" id="second"></h3> 
+
+        <h4 id="total"></h4> <br><br>
+
+
+        <h2>For Subtraction</h2>
+        <h3>Enter First Value : <input type="number" id="third"></h3>
+
+        <h3>Enter Second Value : <input type="number" id="fourth"></h3> 
+
+        <h4 id="ans"></h4> <br><br>
+    </center>
+</body>
+</html>
+
+<script>
+    let first = document.getElementById("first").value
+    let second = document.getElementById("second").value
+    let third = document.getElementById("third").value
+    let fourth = document.getElementById("fourth").value
+
+    class Calculator{
+        sum(first,second){
+            return +first + +second
+        }
+
+        sub(third,fourth){
+            return +third - +fourth
+        }
+    }
+
+    let Object = new Calculator()
+    document.getElementById("total").innerHTML += "Total Of Two Number is : " +Object.sum(first,second)
+    document.getElementById("ans").innerHTML += "Subtraction of two Number is : "+Object.sub(third,fourth)
+</script>

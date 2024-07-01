@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops</title>
+</head>
+<body>
+    <center>
+        <br><br><br>
+        <h1>Object Oriented Programming</h1> <br><br>
+        <h2>----- Person Class -----</h2>
+
+        <h3>Enter Your age : </h3>
+        <input type="text" id="age"> <br>
+
+        <h3>Enter Your Name : </h3>
+        <input type="text" id="name"> <br>
+
+        <h3>What's Your Occupation </h3>
+        <input type="text" id="occupation"> <br>
+
+        <h4 id="person"></h4>
+    </center>
+</body>
+</html>
+
+<script>
+    let age = document.getElementById("age").value
+    let name = document.getElementById("name").value
+    let occupation = document.getElementById("occupation").value
+
+    class person{
+        age(age){
+            return age
+        }
+        name(name){
+            return name
+        }
+        occupation(occupation){
+            return occupation
+        }
+    }
+
+    let abj_1 = new person()
+        document.getElementById("person").innerHTML = "Your Age is : "+ abj_1.age(age) + "<br>"
+        document.getElementById("person").innerHTML += "Your Name is : " +abj_1.name(name) + "<br>"
+        document.getElementById("person").innerHTML += "Your Occupation is : "+abj_1.occupation(occupation) + "<br>"
+</script>
