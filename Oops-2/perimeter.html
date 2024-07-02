@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ractangle</title>
+</head>
+<body>
+    <center> <br>
+        <h1>----- Rectangle -----</h1>
+
+        <h3>Enter width : <input type="text" id="width"> </h3>
+        <h3>Enter Height : <input type="text" id="height"> </h3>
+
+        <h4 id="ans"></h4>
+    </center>
+</body>
+</html>
+
+<script>
+    let width = document.getElementById("width").value
+    let height = document.getElementById("height").value
+
+    class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    perimeter() {
+        return 2 * (this.width + this.height);
+    }
+}
+
+    Object = new Rectangle(width,height);
+    document.getElementById("ans").innerHTML = "Perimeter of the rectangle : "+ Object.perimeter()
+console.log("Perimeter of the rectangle:", rect.perimeter());
+
+</script>

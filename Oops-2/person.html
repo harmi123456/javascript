@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person</title>
+</head>
+<body>
+    <center> <br>
+        <h1>----- Person -----</h1>
+        <h3>Enter Your Name</h3>
+        <input type="text" id="name">
+
+        <h3>Enter Your Age</h3>
+        <input type="number" id="age">
+
+        <h3>Please enter You Scored Previous Year</h3>
+        <input type="number" id="score">
+
+        <h4 id="ans"></h4>
+    </center>
+</body>
+</html>
+
+<script>
+    let name = document.getElementById("name").value
+    let age = document.getElementById("age").value
+    let score = document.getElementById("score").value
+
+    class person{
+        constructor(name ,age, score){
+            this.name = name 
+            this.age = age
+            this.score = score
+        }
+    }
+
+    let object_person = new person(name,age,score)
+        document.getElementById("ans").innerHTML += "Your Name is : "+ object_person.name + "<br>"
+        document.getElementById("ans").innerHTML += "Your Age is : "+ object_person.age + "<br>"
+        document.getElementById("ans").innerHTML += "Your Scored Marks are : "+ object_person.score + "<br>"
+</script>

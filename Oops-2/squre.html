@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQURE</title>
+</head>
+<body>
+    <center> <br>
+        <h1>----- Squre -----</h1>
+        <h3>Enter Any Number</h3>
+        <input type="number" id="number"> <br>
+
+        <h4 id="ans"></h4>
+    </center>
+</body>
+</html>
+<script>
+    let number = document.getElementById("number").value
+
+    class squre{
+        constructor(num){
+            this.num = num
+            document.getElementById("ans").innerHTML = "Squre Of Number is : "+ num*num
+            console.log(num*num);
+        }
+    }
+    let object_squre = new squre(number)
+
+</script>

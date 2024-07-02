@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR</title>
+</head>
+<body>
+    <center>
+        <br>
+        
+            <h1>Object Oriented Programming</h1> <br>
+            <h2>----- Car -----</h2>
+    
+            <h3>Which Color do you Prefer For Your Car...??</h3>
+            <input type="text" id="color"> <br>
+    
+            <h3>What's The Average Range for Your Car...??</h3>
+            <input type="text" id="range"> <br>
+    
+            <h3>Which Car Do You Like The Most...??</h3>
+            <input type="text" id="car_name"> <br>
+    
+            <h4 id="car"></h4>
+        
+    </center>
+</body>
+</html>
+
+<script>
+    let color = document.getElementById("color").value
+    let range = document.getElementById("range").value
+    let name = document.getElementById("car_name").value
+
+    class car {
+       constructor(color , range , name){
+        this.color = color
+        this.range = range
+        this.name = name
+       }
+
+    }
+
+    let object_car = new car(color,range,name)
+    console.log(object_car)
+        document.getElementById("car").innerHTML += "Your Selected Car Color is : "+ object_car.color + "<br>"
+        document.getElementById("car").innerHTML += "Your Average Range of car is : "+object_car.range + "<br>"
+        document.getElementById("car").innerHTML += "Your Favorite car name is : "+object_car.name + "<br>"
+
+</script>
