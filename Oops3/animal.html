@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMAL</title>
+</head>
+<body>
+    <center> <br>
+        <h1>** Animals and Sounds **</h1> <br>
+
+        <h2>Cat object</h2> 
+        <h3>write down Your Cat name</h3> 
+        <input type="text" id="cat"> <br>
+
+        <h4 id="ans"></h4> <br>
+
+        <h2>Dog Object</h2>
+        <h3>Write Down Your Dog name</h3>
+        <input type="text" id="dog">
+
+        <h4 id="ans2"></h4> <br>
+
+        <h2>Bird Object</h2>
+        <h3>Write Down Your Bird's name</h3>
+        <input type="text" id="bird">
+
+        <h4 id="ans3"></h4> <br>
+
+    </center>
+</body>
+</html>
+
+<script>
+    let cat_name = document.getElementById("cat").value
+    let dog_name = document.getElementById("dog").value
+    let bird_name = document.getElementById("bird").value
+
+    class Animals{
+        constructor(name){
+            this.name = name
+        }
+        
+    }
+
+    class cat extends Animals{
+        makesound_cat(){
+            document.getElementById("ans").innerHTML += this.name + " Mewwwwww"
+         }
+    }
+
+    class dog extends Animals{
+        makesound_dog(){
+            document.getElementById("ans2").innerHTML += this.name + "Bhaww...Bhaww...."
+        }
+    }
+
+    class bird extends Animals{
+        makesound_bird(){
+            document.getElementById("ans3").innerHTML += this.name + "chirp....chirp..."
+        }
+    }
+
+    let catsound = new cat(cat_name + " 's Voice : ")
+    catsound.makesound_cat()
+
+    let dogsound = new dog(dog_name + " 's voice : ")
+    dogsound.makesound_dog()
+
+    let birdsound = new bird(bird_name + " 's voice : ")
+    birdsound.makesound_bird()
+</script>
