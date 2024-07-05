@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMAL</title>
+</head>
+<body>
+    <center> <br>
+        <h1>** Animals and Sounds **</h1> <br>
+
+        <h2>Cat object</h2> 
+        <h3>write down Your Cat name</h3> 
+        <input type="text" id="cat"> <br>
+
+        <h4 id="ans"></h4> <br>
+
+        <h2>Dog Object</h2>
+        <h3>Write Down Your Dog name</h3>
+        <input type="text" id="dog">
+
+        <h4 id="ans2"></h4> <br>
+
+        <h2>Bird Object</h2>
+        <h3>Write Down Your Bird's name</h3>
+        <input type="text" id="bird">
+
+        <h4 id="ans3"></h4> <br>
+
+    </center>
+</body>
+</html>
+
+<script>
+    let cat_name = document.getElementById("cat").value
+    let dog_name = document.getElementById("dog").value
+    let bird_name = document.getElementById("bird").value
+
+    class Animals{
+        constructor(name){
+            this.name = name
+           
+        }  
+
+    }
+
+    class cat extends Animals{
+        makesound_cat(){
+            document.getElementById("ans").innerHTML += this.name + "'s voice : Mewwwwww <br>"
+        }
+      
+        cat_eat(){
+            document.getElementById("ans").innerHTML += this.name + " Drinks Milk... <br>"
+        }
+
+        cat_sleep(){
+            document.getElementById("ans").innerHTML += this.name + " is sleeping now <br>" 
+        } 
+
+    }
+
+
+    class dog extends Animals{
+        makesound_dog(){
+            document.getElementById("ans2").innerHTML += this.name + "'s voice : Bhaww...Bhaww.... <br>"
+        }
+        dog_eat(){
+            document.getElementById("ans2").innerHTML += this.name + " Eats carbohydrates <br>"
+        }
+        dog_sleep(){
+            document.getElementById("ans2").innerHTML += this.name + " is sleeping now <br>" 
+        } 
+    }
+
+    class bird extends Animals{
+        makesound_bird(){
+            document.getElementById("ans3").innerHTML += this.name + "'s voice : chirp....chirp... <br>"
+        }
+
+        bird_eat(){
+            document.getElementById("ans3").innerHTML += this.name + " Eats seeds and berries <br> "
+        }
+
+        bird_sleep(){
+            document.getElementById("ans3").innerHTML += this.name + " is sleeping now <br>"
+        }
+    }
+
+    let catsound = new cat(cat_name) 
+    catsound.makesound_cat()
+    catsound.cat_eat()
+    catsound.cat_sleep()
+
+
+    let dogsound = new dog(dog_name)
+    dogsound.makesound_dog()
+    dogsound.dog_eat()
+    dogsound.dog_sleep()
+
+    let birdsound = new bird(bird_name)
+    birdsound.makesound_bird()
+    birdsound.bird_eat()
+    birdsound.bird_sleep()
+</script>
