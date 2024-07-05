@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOTYPE</title>
+</head>
+<body>
+    <h4 id="ans"></h4> <br><br>
+    <h4 id="ans_1"></h4>
+</body>
+</html>
+
+<script>
+    let arr = [1,2,3,4,5,6]
+
+    document.getElementById("ans").innerHTML += "Your Array is : "+arr + "<br>"
+
+    Array.prototype.harmi = function(el){
+        let newArr = []
+
+        for(let i=0; i<this.length; i++){
+            newArr.push(el(this[i]))
+        }
+        return newArr
+    }
+
+    let ans = arr.harmi((el) => {
+        return el*2
+    })
+
+    document.getElementById("ans").innerHTML += "Each Element Multiply by 2 is :"+ ans
+
+
+
+
+
+
+
+
+    //filter
+
+    let arr_1 = [1,2,3,4,5,6]
+
+    document.getElementById("ans_1").innerHTML += "Your Array is : "+arr_1 + "<br>"
+
+    Array.prototype.harmii = function(element){
+        let newarr = []
+
+        for(let i=0; i<this.length; i++){
+            // newarr.push((this[i]))
+            if(element(this[i]))
+                {
+                    newarr.push((this[i]))
+                }
+        }
+       
+        return newarr
+    }
+
+    let ans_1 = arr_1.harmii((element) => {
+        return element % 2 == 0
+    })
+
+    document.getElementById("ans_1").innerHTML += "Even Number from the array : "+ ans_1
+
+</script>
