@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIRTHDAY</title>
+</head>
+<style>
+    .main{
+        display: none;
+        height: 250px;
+    }
+    #img1, #img2, #img3, #img4{
+        display: none;
+        width: 30%;
+        height: 250px;
+    }
+    body{
+        background-color: rgba(172, 216, 168, 0.591);
+    }
+    h1{
+        color: rgb(20, 20, 20);
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 60px;
+        margin-top: 180px;
+    }
+    .container{
+        height: 300px;
+        width: 100%;
+        display: flex;
+    }
+    .ballons{
+        position: relative;
+        margin-top: -120px;
+        width: 30%;
+        display: none;
+    }
+</style>
+<body>
+    
+    <center> <br><br><br>
+        <h1></h1>
+
+        <div class="container">
+            
+            <img id="img1" src="https://media.tenor.com/t5oEDy07JvoAAAAM/fireworks-happy.gif" alt="">
+            <img id="img2" src="https://media.tenor.com/t5oEDy07JvoAAAAM/fireworks-happy.gif" alt="">
+            
+            <!-- <img class="main" src="https://media.tenor.com/vBJZAZpnldYAAAAM/fireworks-happy-birthday.gif" alt=""> -->
+            <img src="https://media.tenor.com/gL1QuV6cORwAAAAj/happy-birthday-happy-birthday-wishes.gif" alt="" class="main">
+            <img id="img3" src="https://media.tenor.com/t5oEDy07JvoAAAAM/fireworks-happy.gif" alt="">
+            <img id="img4" src="https://media.tenor.com/t5oEDy07JvoAAAAM/fireworks-happy.gif" alt="">    
+        </div>
+        <img class="ballons" id="img5" src="image-removebg-preview (12).png" alt="">
+
+    </center>
+
+       
+</body>
+</html>
+
+<script>
+    let start = 5
+    let stop = setInterval(() => {
+        start--
+        document.querySelector("h1").innerHTML = start
+
+        if(start === 0){
+            clearInterval(stop)
+            document.querySelector("body").style.backgroundColor = "black"
+            document.querySelector("h1").style.display = "none"
+            document.querySelector(".main").style.display = "block"
+            document.getElementById("img1").style.display = "block"
+            document.getElementById("img2").style.display = "block"
+            document.getElementById("img3").style.display = "block"
+            document.getElementById("img4").style.display = "block"
+            document.getElementById("img5").style.display = "block"
+        }
+    },1000)
+</script>

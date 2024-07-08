@@ -1,0 +1,30 @@
+body{
+    /* background: linear-gradient(rgba(0, 0, 0, 0.339),rgba(0, 0, 0, 0.331)),url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJsdXJyZWQlMjBvZmZpY2V8ZW58MHx8MHx8fDA%3D"); */
+    background: linear-gradient(rgba(0, 0, 0, 0.316),rgba(0, 0, 0, 0.327)),url("https://images.unsplash.com/photo-1577412647305-991150c7d163?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGJsdXJyZWQlMjBvZmZpY2V8ZW58MHx8MHx8fDA%3D");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+nav{
+    height: 150px;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    padding: 25px;
+    margin-top: 200px;
+    background-color: rgba(15, 57, 74, 0.711);
+    i{
+        font-size: 25px;
+    }
+    h3{
+        font-family: "Manrope";
+        color: #7997A9;
+        font-size: 18px; 
+    }
+    #c1 , #c2, #c3, #c4, #c5{
+        font-family: "Manrope";
+        font-size: 30px;
+    }
+}

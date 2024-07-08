@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="counter.css">
+
+    <title>COUNTER</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <center>   
+        <nav>   
+                <div class="first">
+                    <center>
+                        <i class="fa-solid fa-user"></i>
+                        <h1 id="c1"></h1>   
+                        <h3>Students Trained</h3>
+                    </center>
+                </div>
+                <div class="second">
+                    <center>
+                        <i class="fa-solid fa-user"></i>
+                        <h1 id="c2"></h1>
+                        <h3>Approved Courses</h3>
+                    </center>
+                </div>
+                <div class="third">
+                    <center>
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <h1 id="c3"></h1>
+                        <h3>Companies Tie-Ups</h3>
+                    </center>
+    
+                </div>
+                 <div class="forth">
+                    <center>
+                        <i class="fa-solid fa-building"></i>
+                        <h1 id="c4"></h1>
+                        <h3>Branches</h3>
+                    </center>
+    
+                </div>
+                <div class="fifth">
+                    <center>
+                        <i class="fa-solid fa-file"></i>
+                        <h1 id="c5"></h1>
+                        <h3>Certification</h3>
+                    </center>
+    
+                </div>
+        </nav>
+
+    </center>
+</body>
+</html>
+<script>
+    let index1 = 0
+    let stop1 = setInterval(()=>{
+        index1 += 30
+        document.getElementById("c1").innerHTML = index1+"+"
+
+        if(index1 === 37500)
+    {
+        clearInterval(stop1)
+    }
+    })
+
+
+    let index2 = 0
+    let stop2 = setInterval(()=>{
+        index2 ++
+
+        document.getElementById("c2").innerHTML = index2+"+"
+
+        if(index2 === 50)
+        {
+            clearInterval(stop2)
+        }
+    },10)
+
+    let index3 = 0
+    let stop3 = setInterval(()=>{
+        index3 ++
+
+        document.getElementById("c3").innerHTML = index3+"+"
+
+        if(index3 === 1500)
+        {
+            clearInterval(stop3)
+        }
+    })
+
+    
+    let index4 = 0
+    let stop4 = setInterval(()=>{
+        index4 ++
+
+        document.getElementById("c4").innerHTML = index4+"+"
+
+        if(index4 === 22)
+        {
+            clearInterval(stop4)
+        }
+    },100)
+
+    let index5 = 0
+    let stop5 = setInterval(()=>{
+        index5 ++
+
+        document.getElementById("c5").innerHTML = index5
+
+        if(index5 === 8)
+        {
+            clearInterval(stop5)
+        }
+    },100)
+</script>
