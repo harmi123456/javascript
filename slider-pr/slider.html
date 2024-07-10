@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+
+    <!-- wow -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Wow.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    
+
+    <!-- Include CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<!-- Include jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Include Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+
+
+
+
+
+<!-- Include Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<!-- Include Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- Include jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Include Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+
+</head>
+
+<style>
+  body{
+    background-color: black;
+  }
+  header{
+    display: none;
+  }
+  header .item {
+    height: 100vh;
+    position: relative;
+  }
+  header .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  header .item .cover {
+    padding: 100px 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  header .item .cover .header-content {
+    position: relative;
+    padding: 60px;
+  }
+
+
+
+  header .item .cover .header-content h2 {
+    font-size: 35px;
+    color: #fff;
+  }
+  header .item .cover .header-content h1 {
+    font-size: 56px;
+    margin: 5px 0 20px;
+    word-spacing: 3px;
+    color: #fff;
+  }
+  header .item .cover .header-content h4 {
+    font-size: 24px;
+    line-height: 36px;
+    color: #fff;
+  }
+
+  header .owl-item.active h1 {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
+    animation-delay: 0.1s;
+  }
+  header .owl-item.active h2 {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-name: fadeInDown;
+    /* animation-delay: 0.1s; */
+  }
+  header .owl-item.active h4 {
+    -webkit-animation-duration: 3ms;
+    animation-duration: 3ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-name: fadeInUp;
+    /* animation-delay: 2ms; */
+  }
+
+
+  header .owl-nav .owl-prev {
+    position: absolute;
+    left: 15px;
+    top: 43%;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+    background: rgba(0, 0, 0, 0.5) !important;
+    width: 40px;
+    cursor: pointer;
+    height: 40px;
+    position: absolute;
+    display: block;
+    z-index: 1000;
+    border-radius: 0;
+  }
+
+
+  header .owl-nav .owl-prev span {
+    font-size: 1.6875rem;
+    color: #fff;
+  }
+
+  header .owl-nav .owl-prev:focus {
+    outline: 0;
+  }
+  header .owl-nav .owl-prev:hover {
+    background: #000 !important;
+  }
+  header .owl-nav .owl-next {
+    position: absolute;
+    right: 15px;
+    top: 43%;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+    background: rgba(0, 0, 0, 0.5) !important;
+    width: 40px;
+    cursor: pointer;
+    height: 40px;
+    display: block;
+  }
+  header .owl-nav .owl-next span {
+    font-size: 1.6875rem;
+    color: #fff;
+  }
+
+
+  header:hover .owl-prev {
+    left: 0px;
+    opacity: 1;
+  }
+  header:hover .owl-next {
+      right: 0px;
+      opacity: 1;
+  }
+
+
+
+  #content{
+    text-align: center;
+    font-size: 100px;
+    margin-top: 200px;
+    color: white;
+  }
+</style>
+
+
+<body>
+
+  <h1 id="content" class="wow animate__animated animate__zoomInDown"></h1>
+
+    <header>
+
+        <div class="owl-carousel owl-theme wow bounceInUp">
+
+            <div class="item">
+                <img src="https://cdn.pixabay.com/photo/2017/10/24/10/30/business-2884023_960_720.jpg" alt="">
+                <div class="cover">
+                    <div class="container">
+                        <div class="header-content">
+                            <h2>Teimagine Digital Experience with</h2>
+                            <h1>Start-ups and solutions</h1>
+                            <h4>We help entrepreneurs, start-ups and enterprises shape their ideas into products</h4>
+                        </div>
+                    </div>
+                 </div>
+            </div>   
+
+            <div class="item">
+                <img src="https://img.freepik.com/premium-photo/man-woman-are-looking-laptop-with-sticker-screen_979520-95808.jpg?size=626&ext=jpg&ga=GA1.1.2122388718.1701775106&semt=ais_hybrid" alt="">
+                <div class="cover">
+                    <div class="container">
+                        <div class="header-content">
+                            <h2>Reimagine Digital Experience with</h2>
+                            <h1>Intelligent solutions</h1>
+                            <h4>We help entrepreneurs, start-ups and enterprises shape their ideas into products</h4>
+                        </div>
+                    </div>
+                 </div>
+            </div> 
+
+
+            
+            <div class="item">
+                <img src="https://cdn.pixabay.com/photo/2017/05/04/16/37/meeting-2284501_960_720.jpg" alt="">
+                <div class="cover">
+                    <div class="container">
+                        <div class="header-content">
+                            <h2>Peimagine Digital Experience with</h2>
+                            <h1>Intelligent Solutions</h1>
+                            <h4>We help entrepreneurs, start-ups and enterprises shape their ideas into products</h4>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+
+            <div class="item">
+              <img src="https://img.freepik.com/free-photo/guy-shows-document-girl-group-young-freelancers-office-have-conversation-working_146671-13569.jpg?size=626&ext=jpg&ga=GA1.1.2122388718.1701775106&semt=ais_hybrid" alt="">
+              <div class="cover">
+                  <div class="container">
+                      <div class="header-content">
+                          <h2>Reimagine Digital Experience with</h2>
+                          <h1>Intelligent solutions</h1>
+                          <h4>We help entrepreneurs, start-ups and enterprises shape their ideas into products</h4>
+                      </div>
+                  </div>
+               </div>
+          </div> 
+
+        </div>
+    </header>
+</body>
+</html>
+
+
+<script>
+  let start = 5
+    let stop = setInterval(() => {
+        start--
+        document.querySelector("#content").innerHTML = start
+
+        if(start === -1){
+
+          clearInterval(stop)
+          document.querySelector("#content").style.display = "none"
+          document.querySelector("header").style.display = "block"
+        }
+
+    }, 1000);
+
+    
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    // dots:false,
+    nav:true,
+    // mouseDrag:false,
+    autoplay:true,
+    animateOut: 'slideOutUp',
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+});
+
+
+$(document).ready(function(){
+    var slides = $('.owl-carousel .item');
+    var currentSlide = 0;
+    var slideInterval = setInterval(nextSlide, 100); // 3000ms = 3 seconds
+
+    function nextSlide() {
+        slides.eq(currentSlide).removeClass('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides.eq(currentSlide).addClass('active');
+    }
+    
+    slides.eq(currentSlide).addClass('active'); // Show the first slide initially
+});
+
+
+
+
+  new WOW().init();
+</script>
+
+
