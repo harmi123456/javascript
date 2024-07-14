@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAKE</title>
+</head>
+<style>
+  
+    .img{
+        height: 200px;
+        border-bottom-right-radius: 50px;
+        border-bottom: 1px solid rgba(169, 169, 169, 0.875);
+        border-right: 1px solid rgba(169, 169, 169, 0.875);
+        padding-right: 30px;
+        padding-bottom: 40px;
+    }
+    .head{
+        font-size: 15px;
+        color: purple;
+        margin-top: -10px;
+    }
+    .price{
+        color: rgba(154, 61, 154, 0.732);
+        font-size: 15px;
+        margin-top: -30px;
+    }
+    .div{
+        height: 250px;
+        width: 44%;
+        border-right: 2px solid;
+        border-right-style: dashed;
+        border-right-color: rgb(74, 1, 126);
+        display: inline-block;
+        padding: 30px;
+    }
+   
+</style>
+<body>
+    <h1 id="main"></h1>
+</body>
+</html>
+
+<script>
+    fetch("https://fakestoreapi.com/products")
+
+    .then((res) => {
+        return res.json()
+    }).then((json) => {
+        console.log(json)
+        display(json)
+    }).catch((err) => {
+        console.log(err)
+    })
+
+    function display(json) {
+        json.map((el) => {
+
+            let div = document.createElement("div")
+            div.setAttribute("class","div")
+
+            let heading = document.createElement("h5")
+            heading.setAttribute("class","head")
+
+            heading.innerHTML = el.title
+
+            let pic = document.createElement("img")
+            pic.setAttribute("src", el.image)
+            pic.setAttribute("class","img")
+
+            let price = document.createElement("p")
+            price.innerHTML = "$ "+ el.price
+            price.setAttribute("class","price")
+
+            div.append(heading , pic, price)
+            document.getElementById("main").append(div)
+
+        })
+    }
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOG</title>
+</head>
+<style>
+  body{
+    background-color: aliceblue;
+  }
+  .div{
+    height: 380px;
+    width: 50%;
+    .image{
+      height: 100%;
+      /* width: 100%; */
+    }
+  }
+  h3{
+    position: relative;
+  }
+</style>
+<body>
+  <center>
+    <h1>Are You Looking For Dog Images....? </h1>
+    <h5>Then Here I saw Some Images Hope You Like</h5>
+    <p>Watch The next Image Please Refresh Your Current Browser...</p>
+    <div id="main"></div>
+    <h3>Thanks For Your Precious Time...😊</h3>
+  </center>
+</body>
+</html>
+<script>
+
+  fetch("https://dog.ceo/api/breeds/image/random")
+  .then((res) => {
+    return res.json()
+  }).then((json) => {
+    console.log(json)
+    display_dog(json)
+  }).catch((err) => {
+    console.log(err)
+  })
+
+  function display_dog(json){
+      let div = document.createElement("div")
+      div.setAttribute("class","div")
+
+      let image = document.createElement("img")
+      image.setAttribute("src", json.message)
+      image.setAttribute("class","image")
+
+       div.append(image)
+       
+       document.getElementById("main").append(div)
+
+  }
+
+</script>
