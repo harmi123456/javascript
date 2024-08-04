@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin+Sketch');
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://cdn.pixabay.com/photo/2018/08/31/18/21/fantasy-3645269_640.jpg');
+    background-size: cover;
+    margin: 0;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.title {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+input[type="text"] {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #04371c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #056626;
+}
+#main {
+    margin-top: 20px;
+    /* margin-left: -50px; */
+}
+.weather-card {
+    /* background: url("https://cdn.pixabay.com/photo/2020/02/05/09/02/cloud-4820504_640.jpg"); */
+    background: linear-gradient(rgba(0, 0, 0, 0.199),rgba(0, 0, 0, 0.488)), url("https://cdn.pixabay.com/photo/2020/02/05/09/02/cloud-4820504_640.jpg");
+    background-size: cover;
+    background-position: center;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    padding: 20px;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    color: #e3dcdc;
+}
+.weather-card img {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+}
+.weather-card p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: rgba(117, 233, 221, 0.734);
+}
+
+
+
+
+.greeting {
+    transform: rotate(1deg);
+    letter-spacing: 2px;
+    color: darkgreen;
+    text-shadow:
+    4px  4px 100px rgba(256, 256, 256, 1),
+    -4px -4px 100px rgba(246, 246, 246, 1),
+    -4px  4px 100px rgba(246, 246, 246, 1),
+    0px 0px 100px rgba(256, 256, 256, 1),
+        2px 2px 5px rgba(256, 256, 256, 1),
+        3px 3px 20px rgba(256, 256, 256, 1);
+    margin: 20px auto 30px auto;
+}
+.Blink{
+    font-size: 125%;
+    display: inline-block;
+    transform: rotate(15deg) translateY(0px) translateX(0px);
+    animation: blink 5s infinite;
+    animation-delay: 5s;
+    
+    img{
+        height: 40px;
+        width: 50px;
+       position: relative;
+       left: -23px;
+       top: 10px;
+    }
+}
+.green-filter {
+    filter: sepia(800%) saturate(90000%) hue-rotate(90deg);
+}
+
+@keyframes blink {
+    0%  { color: #16b87a}
+    70%  { color: #2cc389; 
+        text-shadow:
+            4px  4px 100px rgba(256, 256, 256, 1),
+            -4px -4px 100px rgba(246, 246, 246, 1),
+            -4px  4px 100px rgba(246, 246, 246, 1),
+            0px 0px 100px rgba(256, 256, 256, 1),
+            2px 2px 5px rgba(256, 256, 256, 1),
+            3px 3px 20px rgba(256, 256, 256, 1)}
+        86%  { color: #2cc389; text-shadow: 2px 2px 5px rgba(256, 256, 256, 1),
+            3px 3px 20px rgba(256, 256, 256, 1)}
+        87.5%  { color: rgb(26, 12, 12); text-shadow: none}
+        88%  { color: #e5e5ce}
+        90.5%  { color: rgb(7, 16, 17); text-shadow: none}
+        91%  { color: #e5e5ce}
+        92%  { color: black; text-shadow: none}
+        94%  { color: black; text-shadow: none}
+        95%  { color: #e5e5ce; text-shadow: 3px 3px 5px rgba(256, 256, 256, 1),
+            3px 3px 20px rgba(256, 256, 256, 1)}
+        97.5%  { color: rgb(13, 29, 10); text-shadow: none}
+        98%  { color: #e5e5ce}
+        100% { color: #e5e5ce; text-shadow: 2px 2px 5px rgba(256, 256, 256, 1),
+            3px 3px 20px rgba(256, 256, 256, 1)}
+}
+
+
+
+
+/* //leaves */
+
+.leaf {
+position: absolute;
+}
+
+.leaf1 {
+top: 0%;
+left: 30%;
+background: url('leave.png');
+background-size: cover;
+width: 120px;
+height: 100px;
+animation: fall 10s ease-out infinite;
+}
+
+.leaf2 {
+top: 0%;
+left: 50%;
+background: url('leave.png');
+background-size: cover;
+width: 120px;
+height: 100px;
+animation: fall 6s ease-out infinite;
+animation-delay: 0s;
+}
+
+.leaf3 {
+top: 10%;
+left: 70%;
+background: url('leave2.png');
+background-size: cover;
+width: 120px;
+height: 100px;
+animation: fall 5s ease-out infinite;
+animation-delay: 2ms;
+}
+
+.leaf4 {
+top: 0%;
+left: 10%;
+background: url('leave2.png');
+background-size: cover;
+width: 120px;
+height: 100px;
+animation: fall 6s ease-out infinite;
+}
+
+.leaf5 {
+top: 50%;
+left: 40%;
+background: url('leave.png');
+background-size: contain;
+background-repeat: no-repeat;
+width: 50px;
+height: 50px;
+animation: fall 5s ease-out infinite;
+}
+
+.leaf6 {
+top: 0%;
+left: 30%;
+background: url('leave2.png');
+background-size: cover;
+width: 20px;
+height: 100px;
+animation: fall 7s ease-out infinite;
+}
+
+.leaf7 {
+top: 30%;
+left: 55%;
+background: url('leave2.png');
+background-size: cover;
+width: 120px;
+height: 30px;
+animation: fall 6s ease-out infinite;
+}
+
+.leaf8 {
+top: 20%;
+left: 10%;
+background: url('leave.png');
+background-size: cover;
+width: 50px;
+height: 80px;
+animation: fall 10s ease-out infinite;
+}
+
+.leaf9 {
+top: 0%;
+left: 20%;
+background: url('leave.png');
+background-size: contain;
+background-repeat: no-repeat;
+width: 120px;
+height: 50px;
+animation: fall 5s ease-out infinite;
+}
+
+.leaf10 {
+top: 30%;
+left: 40%;
+background: url('leave2.png');
+background-size: contain;
+background-repeat: no-repeat;
+width: 120px;
+height: 50px;
+animation: fall 7s ease-out infinite;
+}
+
+.leaf11 {
+top: 20%;
+left: 80%;
+background: url('leave.png');
+background-size: contain;
+background-repeat: no-repeat;
+width: 80px;
+height: 50px;
+animation: fall 10s ease-out infinite;
+}
+
+.leaf12 {
+top: 0%;
+left: 33%;
+background: url('leave2.png');
+background-size: contain;
+background-repeat: no-repeat;
+width: 120px;
+height: 50px;
+animation: fall 8s ease-out infinite;
+}
+
+.leaf13 {
+top: 0%;
+left: 20%;
+background: url('leave.png');
+background-size: contain;
+background-repeat: no-repeat;
+width: 50px;
+height: 50px;
+animation: fall 7s ease-out infinite;
+} 
+
+.leaf14 {
+top: 20%;
+left: 90%;
+background: url('leave2 .png');
+background-size: contain;
+background-repeat: no-repeat;
+width: 120px;
+height: 50px;
+animation: fall 6s ease-out infinite;
+}
+
+.leaf15 {
+top: 0%;
+left: 82%;
+background: url('leave.png');
+background-size: contain;
+background-repeat: no-repeat;
+width: 50px;
+height: 50px;
+animation: fall 6s ease-out infinite;
+}
+
+.leaf9 {
+top: 0%;
+left: 95%;
+background: url('leave2.png');
+background-size: contain;
+background-repeat: no-repeat;
+width: 120px;
+height: 50px;
+animation: fall 10s ease-out infinite;
+}
+
+.leaf9 {
+top: 0%;
+left: 85%;
+background: url('leave.png');
+background-size: contain;
+background-repeat: no-repeat;
+width: 120px;
+height: 50px;
+animation: fall 10s ease-out infinite;
+}
+
+@keyframes fall {
+0% {
+    transform: translateY(0) rotate(60deg);
+    opacity: 1;
+}
+100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.5;
+}
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER</title>
+</head>
+
+<body>
+    <input type="text" id="city">
+    <button id="submit">submit</button>
+
+    <div id="main"></div>
+
+</body>
+</html>
+
+
+<script>
+
+    document.getElementById("submit").addEventListener("click",function(){
+        let city = document.getElementById("city").value
+        let url = `http://api.weatherapi.com/v1/current.json?key=6d4a8271c5fe43e0a1c162147240108&q= ${city}`
+
+        fetch(url)
+        .then(res => res.json())
+        .then( json => {
+            console.clear()
+            console.log(json)
+            displayData(json)
+        })
+        .catch(error => {
+            console.log('Error Fetching The Weather Data:', error)
+        })
+    })
+
+
+
+    function displayData(json){
+
+        let div = document.createElement("div")
+        document.getElementById("main").innerHTML = ""
+
+        let city = document.createElement("h1")
+        city.innerHTML = `<b> City : ${json.location.name} </b>`
+
+        let temp_c = document.createElement("p")
+        temp_c.innerHTML = `<b>Temperature (C) : </b> ${json.current.temp_c}°C`
+
+        let state = document.createElement("p");
+        state.innerHTML = `<b>Region : </b> ${json.location.region}`
+
+        let country = document.createElement("p")
+        country.innerHTML = `<b>Country : </b> ${json.location.country}`
+
+        let text = document.createElement("p")
+        text.innerHTML = `<b>Text : </b> ${json.current.condition.text}`
+
+        let wind_mph = document.createElement("p")
+        wind_mph.innerHTML = `<b> Wind_mph (C) : </b> ${json.current.wind_mph}°C`
+
+
+        let icon = document.createElement("img")
+        icon.src = `${json.current.condition.icon}`
+
+        div.append(city,temp_c,wind_mph,state,country,text,icon)
+        document.getElementById("main").append(div)
+    }
+</script>
+
