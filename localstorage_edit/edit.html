@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LOCALSTORAGE</title>
+
+    <link rel="stylesheet" href="edit.css">
+
+</head>
+<body>
+    <center>
+
+        <h1>LOCAL STORAGE</h1>
+        <p>Enter Any text that you want to Store In Your localStorage</p>
+
+        <input type="text" id="name" placeholder="  Enter Name">
+
+        <button id="add_user">Add User</button>
+        <button id="edit" style="display: none;">Update User</button>
+
+
+        <div id="list"></div>
+
+    </center>
+</body>
+</html>
+
+<script>
+
+    let edit_index = -1
+
+    //print in application
+
+    document.getElementById("add_user").addEventListener("click", function(){
+        let users = JSON.parse(localStorage.getItem("Users")) || []
+
+        let name = document.getElementById("name").value
+
+        let obj = {
+            name:name
+        }
+
+        users.push(obj)
+
+        localStorage.setItem("Users",JSON.stringify(users))
+        display()
+        document.getElementById("name").value = ""
+        document.getElementById("edit").style.display = "none"
+        document.getElementById("add_user").style.display = "inline"
+    }) 
+    
+
+
+    // for display in document
+
+    function display(){
+        let div = document.getElementById("list")
+
+        div.innerHTML = ""
+
+        let users = JSON.parse(localStorage.getItem("Users")) || []
+
+        users.forEach((element,index) => {
+            let h1 = document.createElement("h2")
+            h1.innerHTML = element.name
+
+            let btn = document.createElement("button")
+            btn.innerText = "delete"
+
+
+            //delete button
+            btn.addEventListener("click",function(){
+                delete_data(index)
+            })
+
+
+            // edit data
+            let editbtn = document.createElement("button")
+            editbtn.innerText = "Edit"
+            editbtn.addEventListener("click",function(){
+                edit(element.name,index)
+                document.getElementById("add_user").style.display = "none"
+
+            })
+
+
+
+            div.append(h1,btn,editbtn)
+        });
+    }
+
+
+    // for delete data
+
+    function delete_data(index) {
+        let users = JSON.parse(localStorage.getItem("Users")) || []
+
+        users.splice(index,1)
+        localStorage.setItem("Users",JSON.stringify(users))
+
+        display()
+    }
+
+
+    // for edit data
+
+    function edit(name,index){
+        let user = document.getElementById("name")
+        user.value = name    
+        
+        document.getElementById("edit").style.display = "inline"
+        document.getElementById("add_user").style = "none"
+
+        edit_index = index
+
+    }
+    document.getElementById("edit").addEventListener("click",function(){
+        let users = JSON.parse(localStorage.getItem("Users")) || []
+
+        let user = document.getElementById("name").value
+        console.log(user,edit_index)
+
+        users[edit_index].name = user
+
+        localStorage.setItem("Users",JSON.stringify(users))
+
+        display()
+
+        document.getElementById("name").value = ""
+        edit_index = -1
+    })
+
+    display()
+</script>
