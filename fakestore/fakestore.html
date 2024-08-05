@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAKE STORE</title>
+</head>
+<style>
+    body{
+        background: url("https://cdn.pixabay.com/photo/2016/11/22/21/57/apparel-1850804_1280.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(10px);
+    }
+    input{
+        background-color: #fcb8fe;
+        box-shadow: #b84fbb;
+        border-radius: 100px;
+        display: inline-block;
+        font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+        padding: 7px 20px;
+        text-decoration: none;
+        transition: all 250ms;
+        border: transparent;
+        font-size: 16px;
+    }
+    button{
+        background-color: #c2fbd7;
+        border-radius: 100px;
+        box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+        color: green;
+        display: inline-block;
+        font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+        padding: 7px 20px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 250ms;
+        border: transparent;
+        font-size: 16px;
+    }
+
+    button:hover {
+        box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+        transform: scale(1.05) rotate(-1deg);
+    }
+    input:hover {
+        box-shadow: rgba(195, 80, 227, 0.35) 0 -25px 18px -14px inset,rgba(192, 79, 214, 0.25) 0 1px 2px,rgba(231, 90, 205, 0.25) 0 2px 4px,rgba(224, 91, 239, 0.25) 0 4px 8px,rgba(235, 93, 235, 0.25) 0 8px 16px,rgba(212, 114, 219, 0.25) 0 16px 32px;
+        transform: scale(1.05) rotate(-1deg);
+    }
+    
+    img{
+        height: 200px;
+    }
+    h2,h5,span{
+        font-weight: bold;
+        color: black;
+    }
+    
+</style>
+<body>
+
+   <center> <br><br><br><br>
+    <input type="text" id="id" placeholder="   Enter User Id">
+    <button id="display">display</button>
+    
+    <div id="data"></div>
+   </center>
+
+</body>
+</html>
+
+
+<script>
+
+    document.getElementById('display').addEventListener('click', function() {
+        let userId = document.getElementById("id").value
+        let data = document.getElementById("data")
+        data.innerHTML = ""
+
+        for (let i = 0; i < arr.length; i++) {
+
+            if (arr[i].id == userId) {
+
+                let title = document.createElement("h2")
+                title.innerHTML = arr[i].title
+
+                //image
+
+                let img = document.createElement("img")
+                img.src = arr[i].image
+
+                edit_img = document.createElement("button")
+                edit_img.innerText = "edit image"
+                edit_img.style.display = "block"
+
+                edit_img_in = document.createElement("input")
+                edit_img_in.style.display = "none"
+                edit_img_in.id = "edit_img"
+
+                edit_img.addEventListener("click",function(){
+                    edit_img_in.style.display = "block"
+                    show_img.style.display = "block"
+                    edit_img.style.display = "none"
+                })
+
+                show_img = document.createElement("button")
+                show_img.innerHTML = "Show new image"
+                show_img.style.display = "none"
+
+                show_img.addEventListener("click",function(){
+                    edit_img_in.style.display = "none"
+                    show_img.style.display = "none"
+                    new_img = document.getElementById("edit_img").value
+                    img.src = new_img
+                })
+
+                //price
+
+                let price = document.createElement("h2")
+                price.innerHTML = "Price : " + arr[i].price
+
+
+                edit_price = document.createElement("button")
+                edit_price.innerText = "edit price"
+
+                let edit_p_in = document.createElement("input")
+                edit_p_in.style.display = "none"
+                edit_p_in.id = "edit_price"
+
+                
+                //edit price
+                edit_price.addEventListener("click",function(){
+                    edit_p_in.style.display = "inline"
+                    edit_price.style.display = "none"
+                    save_price.style.display = "inline"
+                })
+
+                //save price
+                let save_price = document.createElement("button")
+                save_price.innerText = "save price"
+                save_price.style.display = "none"
+                save_price.id = "save_price"
+
+                save_price.addEventListener("click",function(){
+                    new_price = document.getElementById("edit_price").value   
+                    price.innerHTML = "Price: " + new_price;
+                    save_price.style.display = "none"
+                    edit_p_in.style.display = "none"
+                })
+
+
+
+                let category = document.createElement("h5")
+                category.innerHTML = "Category : " + arr[i].category
+
+                //rating
+
+                let rating = document.createElement("h5")
+                rating.innerHTML = "Rating : "+ arr[i].rating.rate
+                
+
+                give_rate = document.createElement("button")
+                give_rate.innerHTML = "Give rate"
+
+                give_r_in = document.createElement("input")
+                give_r_in.style.display = "none"
+                give_r_in.id = "give_rate"
+
+                add_rate = document.createElement("button")
+                add_rate.style.display = "none"
+                add_rate.innerHTML = "submit"
+
+                give_rate.addEventListener("click",function(){
+                    give_r_in.style.display = "block"
+                    add_rate.style.display = "block"
+                    give_rate.style.display = "none"
+                })
+
+                add_rate.addEventListener("click",function(){
+                    add_rate.style.display = "none"
+                    give_r_in.style.display = "none"
+                    new_rate = document.getElementById("give_rate").value
+                    rating.innerHTML = "rating : "+ (+arr[i].rating.rate + +new_rate)
+                })
+
+
+                let count = document.createElement("span")
+                count.innerHTML = " " + arr[i].rating.count
+               
+
+                data.append(title, img,edit_img,edit_img_in,show_img, price,edit_price, edit_p_in, save_price, category, rating,give_rate, give_r_in, add_rate, count)
+            }
+        }
+    })
+
+
+
+     
+
+
+</script>
+
+
+
+
+
+
+<script src="fake.js"></script>
