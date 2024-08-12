@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TASK</title>
+    
+</head>
+
+<link rel="stylesheet" href="task.css">
+
+<body>
+
+    <div id="container">
+        <h1>Enter Your Name : </h1>
+        <input type="text" id="name" placeholder="Enter name">
+        <button id="click">Show Tasks</button>
+        <div id="main"></div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+   
+    document.getElementById("click").addEventListener("click", function() {
+            let name = document.getElementById("name").value
+            let mainDiv = document.getElementById("main")
+
+            mainDiv.innerHTML = ""
+
+            let div = document.createElement("div")
+
+            let found = false
+
+            for (let i = 0; i < tasks.length; i++) {
+                if (tasks[i].assignedTo.toLowerCase() === name.toLowerCase()) {
+                   
+                    let title = document.createElement("h2")
+                    title.innerHTML = "Task : "+ tasks[i].title
+                    title.style.fontWeight = "bold"
+
+                    let description = document.createElement("p")
+                    description.innerHTML = "Task Description : "+ tasks[i].description
+
+                    let dueDate = document.createElement("h5")
+                    dueDate.innerHTML = "Your Submision Date is mentioned below :<br> " + tasks[i].dueDate
+
+                    let p = document.createElement("p")
+                    p.innerHTML = "If You Want to take More time Then click below."
+
+                    let d_button = document.createElement("button")
+                    d_button.innerHTML = "Edit Date"
+                    
+                    let date = document.createElement("input")
+                    date.type = "date"
+                    date.id = "date"
+                    date.style.display = "none"
+
+                    d_update = document.createElement("button")
+                    d_update.style.display = "none"
+                    d_update.innerHTML = "Request for new date"
+
+                    d_button.addEventListener("click",function(){
+                        date.style.display = "inline"
+                        d_update.style.display = "inline"
+                        d_button.style.display = "none"
+                    })
+
+                    d_update.addEventListener("click",function(){
+                        new_date = document.getElementById("date").value
+                        dueDate.innerHTML = new_date
+
+                        p.innerHTML = "Your Request Has been Approved... You Can take more time....!"
+                        date.style.display = "none"
+                        d_update.style.display = "none"
+
+
+                        tasks[i].dueDate = new_date
+
+                        localStorage.setItem("tasks", JSON.stringify(tasks))
+                        
+                        console.log("Updated Task:", tasks[i])
+                        
+                    })
+
+                    div.append(title,description,dueDate,p, date, d_button, d_update)
+                    found = true
+                }
+            }
+
+            if (!found) {
+                let notFoundMessage = document.createElement("h1")
+                notFoundMessage.innerHTML = "No tasks assigned to this user.... <br> Please Enter Your Name....!"
+                notFoundMessage.className = 'no-tasks';
+                div.append(notFoundMessage)
+            }
+
+            mainDiv.append(div)
+
+            // Save user data to localStorage
+            let users = JSON.parse(localStorage.getItem("person")) || []
+            let userTask = {
+                Name: name,
+                TaskName: tasks.find(task => task.assignedTo.toLowerCase() === name.toLowerCase())?.title || 'No task',
+                Status: tasks.find(task => task.assignedTo.toLowerCase() === name.toLowerCase())?.dueDate || 'N/A'
+            }
+            users.push(userTask)
+            localStorage.setItem("person", JSON.stringify(users))
+
+            console.log("User Task:", userTask) 
+        })
+
+
+</script>
+
+
+<script src="task.js"></script>
+
+
+
